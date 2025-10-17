@@ -81,9 +81,9 @@ impl FileWatcher {
 
     fn should_process(&self, path: &Path) -> bool {
         path.is_file()
-            && path.extension().map_or(false, |ext| {
-                ext == "log" || ext == "txt" || ext == "secure"
-            })
+            && path
+                .extension()
+                .map_or(false, |ext| ext == "log" || ext == "txt" || ext == "secure")
     }
 
     async fn process_file(&self, path: &Path) {
@@ -96,18 +96,11 @@ impl FileWatcher {
                     path.file_stem().unwrap().to_string_lossy()
                 ));
 
-                match tokio::fs::write(
-                    &output_file,
-                    serde_json::to_string_pretty(&events).unwrap(),
-                )
-                .await
+                match tokio::fs::write(&output_file, serde_json::to_string_pretty(&events).unwrap())
+                    .await
                 {
                     Ok(_) => {
-                        info!(
-                            "Wrote {} events to {}",
-                            events.len(),
-                            output_file.display()
-                        );
+                        info!("Wrote {} events to {}", events.len(), output_file.display());
                     }
                     Err(e) => {
                         error!("Failed to write output: {}", e);

@@ -4,10 +4,10 @@ use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 use tokio::fs;
 use tracing::{error, info, warn};
-use tracing_subscriber::{fmt, prelude::*, EnvFilter};
+use tracing_subscriber::{EnvFilter, fmt, prelude::*};
 use vrl_ocsf_transformer::{
-    config::{OutputFormat, TransformerConfig},
     OcsfTransformer,
+    config::{OutputFormat, TransformerConfig},
 };
 
 #[derive(Parser)]
@@ -171,7 +171,9 @@ async fn main() -> Result<()> {
             convert_command(vector_config, output).await?;
         }
 
-        Commands::Run { config: config_path } => {
+        Commands::Run {
+            config: config_path,
+        } => {
             run_command(config_path).await?;
         }
 
@@ -238,11 +240,7 @@ async fn process_single_file(
     ));
 
     write_events(&events, &output_file, format, pretty).await?;
-    info!(
-        "Wrote {} events to {}",
-        events.len(),
-        output_file.display()
-    );
+    info!("Wrote {} events to {}", events.len(), output_file.display());
 
     Ok(())
 }
@@ -302,13 +300,11 @@ async fn write_events(
                 serde_json::to_string(events)?
             }
         }
-        OutputFormat::Ndjson => {
-            events
-                .iter()
-                .map(|e| serde_json::to_string(e))
-                .collect::<Result<Vec<_>, _>>()?
-                .join("\n")
-        }
+        OutputFormat::Ndjson => events
+            .iter()
+            .map(|e| serde_json::to_string(e))
+            .collect::<Result<Vec<_>, _>>()?
+            .join("\n"),
         OutputFormat::Yaml => serde_yaml::to_string(events)?,
     };
 
@@ -356,7 +352,9 @@ async fn run_command(config_path: PathBuf) -> Result<()> {
     info!("Loading configuration from: {}", config_path.display());
 
     let config = TransformerConfig::from_file(&config_path)?;
-    config.validate().context("Configuration validation failed")?;
+    config
+        .validate()
+        .context("Configuration validation failed")?;
 
     let transformer = OcsfTransformer::with_config(config.clone()).await?;
 
@@ -421,8 +419,7 @@ async fn metrics_command(port: u16) -> Result<()> {
 }
 
 fn setup_logging(level: &str) -> Result<()> {
-    let filter = EnvFilter::try_from_default_env()
-        .unwrap_or_else(|_| EnvFilter::new(level));
+    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new(level));
 
     tracing_subscriber::registry()
         .with(fmt::layer())

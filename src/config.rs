@@ -229,7 +229,8 @@ impl VectorConfig {
         if let Some(sink) = self.sinks.get("ocsf_output") {
             if let Some(path) = sink.get("path") {
                 if let Some(p) = path.as_str() {
-                    config.output_path = PathBuf::from(p).parent()
+                    config.output_path = PathBuf::from(p)
+                        .parent()
                         .unwrap_or(&PathBuf::from("."))
                         .to_path_buf();
                 }
@@ -244,8 +245,8 @@ impl VectorConfig {
 mod tests {
     use super::*;
     use std::fs;
-    use tempfile::NamedTempFile;
     use std::io::Write;
+    use tempfile::NamedTempFile;
 
     #[test]
     fn test_default_config() {

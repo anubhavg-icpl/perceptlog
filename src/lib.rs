@@ -197,9 +197,9 @@ impl VrlRuntime {
         let mut state = RuntimeState::default();
 
         // Run the VRL program
-        let result = self.program.resolve(
-            &mut Context::new(&mut target, &mut state, &self.timezone),
-        );
+        let result =
+            self.program
+                .resolve(&mut Context::new(&mut target, &mut state, &self.timezone));
 
         match result {
             Ok(value) => Ok(value),
@@ -256,11 +256,9 @@ pub fn vrl_value_to_serde_json(value: Value) -> serde_json::Value {
         Value::Null => serde_json::Value::Null,
         Value::Boolean(b) => serde_json::Value::Bool(b),
         Value::Integer(i) => serde_json::Value::Number(serde_json::Number::from(i)),
-        Value::Float(f) => {
-            serde_json::Number::from_f64(f.into())
-                .map(serde_json::Value::Number)
-                .unwrap_or(serde_json::Value::Null)
-        }
+        Value::Float(f) => serde_json::Number::from_f64(f.into())
+            .map(serde_json::Value::Number)
+            .unwrap_or(serde_json::Value::Null),
         Value::Bytes(b) => serde_json::Value::String(String::from_utf8_lossy(&b).to_string()),
         Value::Array(arr) => {
             serde_json::Value::Array(arr.into_iter().map(vrl_value_to_serde_json).collect())

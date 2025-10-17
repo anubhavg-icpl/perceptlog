@@ -1,7 +1,7 @@
 // src/transformer.rs - Core transformation logic
 use crate::{
-    config::TransformerConfig, error::TransformError, vrl_value_to_serde_json, LogEvent,
-    OcsfEvent, TransformResult, VrlRuntime,
+    LogEvent, OcsfEvent, TransformResult, VrlRuntime, config::TransformerConfig,
+    error::TransformError, vrl_value_to_serde_json,
 };
 use anyhow::{Context, Result};
 use serde_json::Value as JsonValue;
@@ -113,7 +113,10 @@ impl OcsfTransformer {
     }
 
     /// Process a log file and return transformed OCSF events
-    pub async fn process_file(&self, file_path: impl AsRef<Path>) -> TransformResult<Vec<OcsfEvent>> {
+    pub async fn process_file(
+        &self,
+        file_path: impl AsRef<Path>,
+    ) -> TransformResult<Vec<OcsfEvent>> {
         let content = fs::read_to_string(file_path.as_ref())
             .map_err(|e| TransformError::IoError(e.to_string()))?;
 
@@ -142,10 +145,10 @@ impl OcsfTransformer {
         &self,
         file_path: impl AsRef<Path>,
     ) -> TransformResult<impl futures::Stream<Item = TransformResult<OcsfEvent>>> {
-        use tokio::io::{AsyncBufReadExt, BufReader};
         use tokio::fs::File;
-        use tokio_stream::wrappers::LinesStream;
+        use tokio::io::{AsyncBufReadExt, BufReader};
         use tokio_stream::StreamExt;
+        use tokio_stream::wrappers::LinesStream;
 
         let file = File::open(file_path.as_ref())
             .await
@@ -157,22 +160,23 @@ impl OcsfTransformer {
 
         let transformer = self.clone();
 
-        Ok(stream.map(move |line_result| {
-            let transformer = transformer.clone();
-            async move {
-                match line_result {
-                    Ok(line) => {
-                        if line.trim().is_empty() {
-                            Err(TransformError::ParseError("Empty line".to_string()))
-                        } else {
-                            transformer.transform_line(&line).await
+        Ok(stream
+            .map(move |line_result| {
+                let transformer = transformer.clone();
+                async move {
+                    match line_result {
+                        Ok(line) => {
+                            if line.trim().is_empty() {
+                                Err(TransformError::ParseError("Empty line".to_string()))
+                            } else {
+                                transformer.transform_line(&line).await
+                            }
                         }
+                        Err(e) => Err(TransformError::IoError(e.to_string())),
                     }
-                    Err(e) => Err(TransformError::IoError(e.to_string())),
                 }
-            }
-        })
-        .buffered(self.config.batch_size))
+            })
+            .buffered(self.config.batch_size))
     }
 
     /// Reload VRL script (useful for hot-reloading)
@@ -220,8 +224,8 @@ impl Clone for OcsfTransformer {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use tempfile::NamedTempFile;
     use std::io::Write;
+    use tempfile::NamedTempFile;
 
     #[tokio::test]
     async fn test_basic_transformation() {

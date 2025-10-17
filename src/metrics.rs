@@ -1,6 +1,6 @@
 // src/metrics.rs - Metrics collection and reporting
-use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::Duration;
 
 #[cfg(feature = "metrics-support")]
@@ -32,7 +32,8 @@ impl Metrics {
 
     pub fn record_transformation(&self, duration: Duration) {
         let ms = duration.as_millis() as u64;
-        self.total_processing_time_ms.fetch_add(ms, Ordering::Relaxed);
+        self.total_processing_time_ms
+            .fetch_add(ms, Ordering::Relaxed);
         self.last_event_time.store(
             std::time::SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)
