@@ -1,0 +1,35 @@
+# PerceptLog Transform Script
+# This script transforms Linux authentication logs to OCSF format
+
+# Parse the log message
+.parsed = parse_syslog!(.message)
+
+# Extract timestamp
+.time = to_unix_timestamp(to_timestamp!(.parsed.timestamp))
+
+# Set OCSF category and class for authentication events
+.category_uid = 3
+.category_name = "Identity & Access Management"
+.class_uid = 3002
+.class_name = "Authentication"
+
+# Extract user information
+.actor.user.name = .parsed.appname
+
+# Set activity and status
+.activity_id = 1
+.activity_name = "Logon"
+.status = "Success"
+
+# Add severity
+.severity_id = 1
+.severity = "Informational"
+
+# Keep original message
+.message = .parsed.message
+
+# Add metadata
+.metadata.product.name = "PerceptLog"
+.metadata.product.vendor_name = "Infopercept"
+.metadata.version = "1.0.0"
+

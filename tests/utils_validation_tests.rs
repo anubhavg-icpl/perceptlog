@@ -4,17 +4,17 @@ use std::io::Write;
 use tempfile::{NamedTempFile, TempDir};
 
 #[test]
-fn test_validate_vrl_script_file() {
+fn test_validate_script_file() {
     // Test with valid file
     let mut temp_file = NamedTempFile::new().unwrap();
     write!(temp_file, ". = .").unwrap();
     temp_file.flush().unwrap();
 
-    assert!(InputValidator::validate_vrl_script_file(temp_file.path()).is_ok());
+    assert!(InputValidator::validate_script_file(temp_file.path()).is_ok());
 
     // Test with non-existent file
-    let non_existent = std::path::PathBuf::from("/non/existent/file.vrl");
-    assert!(InputValidator::validate_vrl_script_file(&non_existent).is_err());
+    let non_existent = std::path::PathBuf::from("/non/existent/file.perceptlog");
+    assert!(InputValidator::validate_script_file(&non_existent).is_err());
 }
 
 #[test]

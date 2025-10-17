@@ -17,7 +17,7 @@ pub struct TransformCommand;
 impl TransformCommand {
     /// Execute the transform command
     pub async fn execute(
-        vrl_script: PathBuf,
+        script: PathBuf,
         input: PathBuf,
         output: PathBuf,
         format: OutputFormat,
@@ -26,17 +26,17 @@ impl TransformCommand {
         _batch_size: usize,
     ) -> Result<()> {
         info!("Starting transformation process");
-        info!("VRL Script: {}", vrl_script.display());
+        info!("PerceptLog Script: {}", script.display());
         info!("Input: {}", input.display());
         info!("Output: {}", output.display());
         info!("Format: {:?}", format);
 
         // Validate inputs
-        InputValidator::validate_vrl_script_file(&vrl_script)?;
+        InputValidator::validate_script_file(&script)?;
         InputValidator::validate_input_path(&input)?;
 
         // Create transformer
-        let transformer = OcsfTransformer::new(&vrl_script).await?;
+        let transformer = OcsfTransformer::new(&script).await?;
 
         // Create output directory
         FileWriter::ensure_directory_exists(&output).await?;
@@ -163,19 +163,19 @@ pub struct ValidateCommand;
 
 impl ValidateCommand {
     /// Execute the validate command
-    pub async fn execute(vrl_script: PathBuf) -> Result<()> {
-        info!("Validating VRL script: {}", vrl_script.display());
+    pub async fn execute(script: PathBuf) -> Result<()> {
+        info!("Validating transform script: {}", script.display());
 
-        let script_content = fs::read_to_string(&vrl_script).await?;
+        let script_content = fs::read_to_string(&script).await?;
 
         match OcsfTransformer::validate_script(&script_content) {
             Ok(_) => {
-                info!("✓ VRL script is valid");
+                info!("✓ transform script is valid");
                 Ok(())
             }
             Err(e) => {
-                error!("✗ VRL script validation failed: {}", e);
-                Err(anyhow::anyhow!("VRL script validation failed: {e}"))
+                error!("✗ transform script validation failed: {}", e);
+                Err(anyhow::anyhow!("transform script validation failed: {e}"))
             }
         }
     }
@@ -259,7 +259,7 @@ pub struct WatchCommand;
 impl WatchCommand {
     /// Execute the watch command
     pub async fn execute(
-        vrl_script: PathBuf,
+        script: PathBuf,
         input: PathBuf,
         output: PathBuf,
         interval: u64,
@@ -267,12 +267,12 @@ impl WatchCommand {
         use crate::io::watcher::FileWatcher;
 
         info!("Starting watch mode");
-        info!("VRL Script: {}", vrl_script.display());
+        info!("PerceptLog Script: {}", script.display());
         info!("Input: {}", input.display());
         info!("Output: {}", output.display());
         info!("Interval: {} seconds", interval);
 
-        let transformer = OcsfTransformer::new(&vrl_script).await?;
+        let transformer = OcsfTransformer::new(&script).await?;
         let watcher = FileWatcher::new(transformer, input, output, interval)?;
         watcher.start().await?;
 

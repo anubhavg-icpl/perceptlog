@@ -5,8 +5,8 @@ use std::path::PathBuf;
 /// Configuration for the OCSF transformer
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TransformerConfig {
-    /// Path to VRL script file
-    pub vrl_script_path: PathBuf,
+    /// Path to transform script file (.perceptlog)
+    pub script_path: PathBuf,
 
     /// Input file or directory path
     pub input_path: PathBuf,
@@ -62,19 +62,19 @@ pub struct TransformerConfig {
     #[serde(default)]
     pub exclude_patterns: Vec<String>,
 
-    /// Enable hot reload of VRL script
+    /// Enable hot reload of transform script
     #[serde(default)]
     pub hot_reload: bool,
 
-    /// Additional VRL functions directory
+    /// Additional custom functions directory
     #[serde(default)]
-    pub vrl_functions_dir: Option<PathBuf>,
+    pub functions_dir: Option<PathBuf>,
 }
 
 impl Default for TransformerConfig {
     fn default() -> Self {
         Self {
-            vrl_script_path: PathBuf::from("remap.vrl"),
+            script_path: PathBuf::from("transform.perceptlog"),
             input_path: PathBuf::from("/var/log/auth.log"),
             output_path: PathBuf::from("./ocsf_output"),
             output_format: default_output_format(),
@@ -90,7 +90,7 @@ impl Default for TransformerConfig {
             include_patterns: Vec::new(),
             exclude_patterns: Vec::new(),
             hot_reload: false,
-            vrl_functions_dir: None,
+            functions_dir: None,
         }
     }
 }
@@ -108,10 +108,10 @@ impl TransformerConfig {
 
     /// Validate the configuration
     pub fn validate(&self) -> Result<(), String> {
-        if !self.vrl_script_path.exists() {
+        if !self.script_path.exists() {
             return Err(format!(
                 "VRL script file not found: {}",
-                self.vrl_script_path.display()
+                self.script_path.display()
             ));
         }
 
@@ -207,7 +207,7 @@ impl VectorConfig {
         if let Some(transform) = self.transforms.get("ocsf_transform") {
             if let Some(file) = transform.get("file") {
                 if let Some(path) = file.as_str() {
-                    config.vrl_script_path = PathBuf::from(path);
+                    config.script_path = PathBuf::from(path);
                 }
             }
         }

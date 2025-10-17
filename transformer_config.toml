@@ -1,4 +1,4 @@
-vrl_script_path = "remap.vrl"
+script_path = "transform.perceptlog"
 input_path = "/var/log/auth.log"
 output_path = "./ocsf_output"
 output_format = "ndjson"

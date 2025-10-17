@@ -5,7 +5,7 @@ use tempfile::NamedTempFile;
 
 #[tokio::test]
 async fn test_validate_command() {
-    // Create a temporary VRL script file
+    // Create a temporary transform script file
     let mut temp_file = NamedTempFile::new().unwrap();
     write!(temp_file, ". = .").unwrap();
     temp_file.flush().unwrap();

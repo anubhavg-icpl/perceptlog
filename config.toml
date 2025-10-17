@@ -1,8 +1,8 @@
-# Example configuration for VRL OCSF Transformer
+# Example configuration for PerceptLog Transformer
 # This configuration matches your existing Vector setup
 
-# Path to your VRL script (the one you provided)
-vrl_script_path = "remap.vrl"
+# Path to your transform script (.perceptlog file)
+script_path = "transform.perceptlog"
 
 # Input path - change this to match your RHEL secure log location
 # For Ubuntu/Debian: /var/log/auth.log
@@ -32,7 +32,7 @@ watch_interval = 5
 enable_metrics = false
 metrics_port = 9090
 
-# Optional: Enable hot reload of VRL script
+# Optional: Enable hot reload of transform script
 hot_reload = false
 
 # File patterns (optional)
@@ -41,5 +41,5 @@ include_patterns = ["secure*", "*.log"]
 # Exclude compressed or old files
 exclude_patterns = ["*.gz", "*.old", "*.1", "*.2"]
 
-# Optional: Directory for custom VRL functions
-# vrl_functions_dir = "./vrl_functions"
+# Optional: Directory for custom transform functions
+# functions_dir = "./functions"

@@ -4,7 +4,7 @@ use crate::{
     config::TransformerConfig,
     error::TransformError,
     ocsf::OcsfEvent,
-    vrl::{VrlRuntime, log_event_to_vrl_value, vrl_value_to_serde_json},
+    runtime::{VrlRuntime, log_event_to_vrl_value, vrl_value_to_serde_json},
 };
 use futures::StreamExt;
 use std::fs;
@@ -47,7 +47,7 @@ impl OcsfTransformer {
 
     /// Create a new transformer with configuration
     pub async fn with_config(config: TransformerConfig) -> TransformResult<Self> {
-        let vrl_script = fs::read_to_string(&config.vrl_script_path)
+        let vrl_script = fs::read_to_string(&config.script_path)
             .map_err(|e| TransformError::IoError(e.to_string()))?;
 
         let runtime = VrlRuntime::new(&vrl_script)
@@ -181,7 +181,7 @@ impl OcsfTransformer {
     /// Reload VRL script (useful for hot-reloading)
     #[cfg(feature = "hot-reload")]
     pub async fn reload_script(&self) -> TransformResult<()> {
-        let vrl_script = fs::read_to_string(&self.config.vrl_script_path)
+        let vrl_script = fs::read_to_string(&self.config.script_path)
             .map_err(|e| TransformError::IoError(e.to_string()))?;
 
         let new_runtime = VrlRuntime::new(&vrl_script)

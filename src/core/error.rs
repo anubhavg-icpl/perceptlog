@@ -5,7 +5,7 @@ use thiserror::Error;
 /// Main error type for transformation operations
 #[derive(Error, Debug)]
 pub enum TransformError {
-    #[error("VRL compilation error: {0}")]
+    #[error("Script compilation error: {0}")]
     CompileError(String),
 
     #[error("Transformation error: {0}")]

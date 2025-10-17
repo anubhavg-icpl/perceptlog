@@ -15,7 +15,7 @@ fn test_default_config() {
 #[test]
 fn test_config_from_toml() {
     let toml_content = r#"
-        vrl_script_path = "custom.vrl"
+        script_path = "custom.perceptlog"
         input_path = "/var/log/secure"
         output_path = "./output"
         output_format = "json"
@@ -31,7 +31,7 @@ fn test_config_from_toml() {
 
     let config = TransformerConfig::from_file(temp_file.path()).unwrap();
 
-    assert_eq!(config.vrl_script_path, PathBuf::from("custom.vrl"));
+    assert_eq!(config.script_path, PathBuf::from("custom.perceptlog"));
     assert_eq!(config.batch_size, 50);
     assert_eq!(config.output_format, OutputFormat::Json);
     assert!(!config.skip_errors);

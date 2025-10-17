@@ -30,7 +30,7 @@ async fn test_file_processing() {
     writeln!(temp_file, "Test log line 3").unwrap();
     temp_file.flush().unwrap();
 
-    // Create temporary VRL script file
+    // Create temporary transform script file
     let mut vrl_file = NamedTempFile::new().unwrap();
     write!(vrl_file, "{vrl_script}").unwrap();
     vrl_file.flush().unwrap();
@@ -38,7 +38,7 @@ async fn test_file_processing() {
     let transformer = OcsfTransformer::new(vrl_file.path()).await.unwrap();
 
     // Test that the transformer can read the file (even if transformation fails)
-    // Since our VRL runtime doesn't execute properly yet, we just test file reading
+    // Since our PerceptLog runtime doesn't execute properly yet, we just test file reading
     let _result = transformer.process_file(temp_file.path()).await;
     // We don't assert success here as the actual transformation may fail
     // This test validates the file processing pipeline exists

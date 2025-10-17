@@ -3,8 +3,8 @@ use perceptlog::error::{TransformError, BatchError, ValidationErrors, Validation
 
 #[test]
 fn test_error_display() {
-    let err = TransformError::CompileError("Invalid VRL syntax".to_string());
-    assert_eq!(err.to_string(), "VRL compilation error: Invalid VRL syntax");
+    let err = TransformError::CompileError("Invalid PerceptLog syntax".to_string());
+    assert_eq!(err.to_string(), "Script compilation error: Invalid PerceptLog syntax");
 
     let err = TransformError::ParseError("Invalid JSON".to_string());
     assert_eq!(err.to_string(), "Parse error: Invalid JSON");

@@ -24,7 +24,7 @@ async fn main() -> Result<()> {
 
     match cli.command {
         Commands::Transform {
-            vrl_script,
+            script,
             input,
             output,
             format,
@@ -33,7 +33,7 @@ async fn main() -> Result<()> {
             batch_size,
         } => {
             TransformCommand::execute(
-                vrl_script,
+                script,
                 input,
                 output,
                 format,
@@ -46,17 +46,17 @@ async fn main() -> Result<()> {
 
         #[cfg(feature = "watch-mode")]
         Commands::Watch {
-            vrl_script,
+            script,
             input,
             output,
             interval,
         } => {
             use perceptlog::commands::WatchCommand;
-            WatchCommand::execute(vrl_script, input, output, interval).await?;
+            WatchCommand::execute(script, input, output, interval).await?;
         }
 
-        Commands::Validate { vrl_script } => {
-            ValidateCommand::execute(vrl_script).await?;
+        Commands::Validate { script } => {
+            ValidateCommand::execute(script).await?;
         }
 
         Commands::Convert {

@@ -23,7 +23,7 @@ pub use cli::{Cli, Commands};
 // Make commonly used submodules available at the crate root for a cleaner API
 pub use cli::commands as commands;
 pub use core::config as config;
-pub use processing::vrl as vrl;
+pub use processing::runtime as runtime;
 
 // Backwards-compatible module aliases used by internal paths
 pub use core::error as error;

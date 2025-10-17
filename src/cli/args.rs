@@ -8,18 +8,18 @@ use std::path::PathBuf;
     name = "perceptlog",
     version = env!("CARGO_PKG_VERSION"),
     author = env!("CARGO_PKG_AUTHORS"),
-    about = "Transform Linux authentication logs to OCSF format using VRL"
+    about = "Transform Linux authentication logs to OCSF format"
 )]
 pub struct Cli {
     #[command(subcommand)]
     pub command: Commands,
 
     /// Log level (trace, debug, info, warn, error)
-    #[arg(short, long, default_value = "info", env = "VRL_OCSF_LOG_LEVEL")]
+    #[arg(short, long, default_value = "info", env = "PERCEPTLOG_LOG_LEVEL")]
     pub log_level: String,
 
     /// Configuration file path
-    #[arg(short, long, env = "VRL_OCSF_CONFIG")]
+    #[arg(short, long, env = "PERCEPTLOG_CONFIG")]
     pub config: Option<PathBuf>,
 }
 
@@ -27,9 +27,9 @@ pub struct Cli {
 pub enum Commands {
     /// Transform log files to OCSF format
     Transform {
-        /// VRL script file path
+        /// Transform script file path (.perceptlog)
         #[arg(short = 's', long)]
-        vrl_script: PathBuf,
+        script: PathBuf,
 
         /// Input log file or directory
         #[arg(short, long)]
@@ -59,9 +59,9 @@ pub enum Commands {
     /// Watch files for changes and continuously transform
     #[cfg(feature = "watch-mode")]
     Watch {
-        /// VRL script file path
+        /// Transform script file path (.perceptlog)
         #[arg(short = 's', long)]
-        vrl_script: PathBuf,
+        script: PathBuf,
 
         /// Input log file or directory to watch
         #[arg(short, long)]
@@ -76,10 +76,10 @@ pub enum Commands {
         interval: u64,
     },
 
-    /// Validate VRL script syntax
+    /// Validate transform script syntax
     Validate {
-        /// VRL script file path
-        vrl_script: PathBuf,
+        /// Transform script file path (.perceptlog)
+        script: PathBuf,
     },
 
     /// Convert Vector TOML config to transformer config

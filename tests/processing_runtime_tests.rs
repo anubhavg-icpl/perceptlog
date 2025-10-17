@@ -1,5 +1,5 @@
-// tests/processing_vrl_tests.rs - Tests for VRL runtime
-use perceptlog::vrl::VrlRuntime;
+// tests/processing_runtime_tests.rs - Tests for transform runtime
+use perceptlog::runtime::VrlRuntime;
 
 #[test]
 fn test_vrl_runtime_creation() {
@@ -35,5 +35,5 @@ fn test_value_conversions() {
 fn test_vrl_runtime_simple_transform() {
     let script = r#". = .message"#;
     let result = VrlRuntime::new(script);
-    assert!(result.is_ok(), "Simple VRL script should compile");
+    assert!(result.is_ok(), "Simple transform script should compile");
 }

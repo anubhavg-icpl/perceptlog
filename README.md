@@ -1,19 +1,19 @@
-# VRL OCSF Transformer
+# transform OCSF Transformer
 
 A high-performance Rust library and CLI tool for transforming Linux authentication logs to OCSF (Open Cybersecurity Schema Framework) format using Vector Remap Language (VRL).
 
 ## Features
 
-- 🚀 **High Performance**: Built in Rust with VRL for near-native transformation speed
+- 🚀 **High Performance**: Built in Rust with transform for near-native transformation speed
 - 📝 **OCSF v1.6.0 Compliant**: Generates fully compliant OCSF authentication events
 - 🔧 **Flexible Configuration**: TOML-based configuration with environment variable support
 - 📊 **Multiple Output Formats**: JSON, NDJSON, YAML with pretty-printing options
 - 🔄 **Batch Processing**: Efficient batch transformation with configurable batch sizes
 - 👀 **Watch Mode**: Continuous monitoring and transformation of log files
 - 📈 **Metrics Support**: Prometheus-compatible metrics endpoint
-- 🔥 **Hot Reload**: Reload VRL scripts without restarting
+- 🔥 **Hot Reload**: Reload transform scripts without restarting
 - 🧪 **Comprehensive Testing**: Unit tests, integration tests, and benchmarks
-- 🛠️ **Vector Compatible**: Works with existing Vector VRL scripts and configurations
+- 🛠️ **Vector Compatible**: Works with existing Vector transform scripts and configurations
 
 ## Installation
 
@@ -43,28 +43,28 @@ cargo install perceptlog
 
 ```bash
 # Transform a single log file
-perceptlog transform -s remap.vrl -i /var/log/auth.log -o ./output
+perceptlog transform -s transform.perceptlog -i /var/log/auth.log -o ./output
 
 # Transform with specific output format
-perceptlog transform -s remap.vrl -i /var/log/auth.log -o ./output -f json-pretty
+perceptlog transform -s transform.perceptlog -i /var/log/auth.log -o ./output -f json-pretty
 
 # Transform directory of logs
-perceptlog transform -s remap.vrl -i /var/log/ -o ./output --skip-errors
+perceptlog transform -s transform.perceptlog -i /var/log/ -o ./output --skip-errors
 ```
 
-### Using Your Existing VRL Script
+### Using Your Existing transform Script
 
-Copy your `remap.vrl` file to the project directory and run:
+Copy your `transform.perceptlog` file to the project directory and run:
 
 ```bash
-perceptlog transform -s remap.vrl -i /var/log/secure -o ./ocsf_output
+perceptlog transform -s transform.perceptlog -i /var/log/secure -o ./ocsf_output
 ```
 
 ### Watch Mode
 
 ```bash
 # Watch a file for changes and transform automatically
-perceptlog watch -s remap.vrl -i /var/log/auth.log -o ./output --interval 5
+perceptlog watch -s transform.perceptlog -i /var/log/auth.log -o ./output --interval 5
 ```
 
 ### Configuration File
@@ -72,7 +72,7 @@ perceptlog watch -s remap.vrl -i /var/log/auth.log -o ./output --interval 5
 Create a `config.toml`:
 
 ```toml
-vrl_script_path = "remap.vrl"
+vrl_script_path = "transform.perceptlog"
 input_path = "/var/log/auth.log"
 output_path = "./ocsf_output"
 output_format = "ndjson"
@@ -88,7 +88,7 @@ max_workers = 4
 watch_mode = false
 watch_interval = 5
 
-# Hot reload VRL script
+# Hot reload transform script
 hot_reload = true
 
 # File patterns (optional)
@@ -118,8 +118,8 @@ use vrl_ocsf_transformer::{OcsfTransformer, LogEvent};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Create transformer with VRL script
-    let transformer = OcsfTransformer::new("remap.vrl").await?;
+    // Create transformer with transform script
+    let transformer = OcsfTransformer::new("transform.perceptlog").await?;
 
     // Transform a single log line
     let log_line = "Nov 15 10:23:45 server sshd[1234]: Accepted password for user from 192.168.1.100";
@@ -141,7 +141,7 @@ use std::path::PathBuf;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Load configuration
     let config = TransformerConfig {
-        vrl_script_path: PathBuf::from("remap.vrl"),
+        vrl_script_path: PathBuf::from("transform.perceptlog"),
         input_path: PathBuf::from("/var/log/auth.log"),
         output_path: PathBuf::from("./output"),
         batch_size: 200,
@@ -169,7 +169,7 @@ use futures::StreamExt;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let transformer = OcsfTransformer::new("remap.vrl").await?;
+    let transformer = OcsfTransformer::new("transform.perceptlog").await?;
 
     // Stream process a large file
     let mut stream = transformer.stream_file("/var/log/auth.log").await?;
@@ -200,13 +200,13 @@ perceptlog convert vector.toml -o config.toml
 perceptlog run config.toml
 ```
 
-## VRL Script Integration
+## transform Script Integration
 
-The transformer uses your existing VRL script directly. Place your `remap.vrl` file in the project directory. The script should transform events to OCSF format.
+The transformer uses your existing transform script directly. Place your `transform.perceptlog` file in the project directory. The script should transform events to OCSF format.
 
-Example VRL script structure:
+Example transform script structure:
 ```vrl
-# Your existing VRL transformation logic
+# Your existing transform transformation logic
 ocsf = {
   "metadata": {
     "uid": uuid_v7(),
@@ -287,14 +287,14 @@ cargo bench
 
 - `full`: All features enabled (default)
 - `metrics-support`: Enable Prometheus metrics
-- `hot-reload`: Enable VRL script hot reloading
+- `hot-reload`: Enable transform script hot reloading
 - `watch-mode`: Enable file watching functionality
 
 ## Architecture
 
 The transformer consists of several key components:
 
-1. **VRL Runtime**: Executes compiled VRL scripts for transformations
+1. **VRL Runtime**: Executes compiled transform scripts for transformations
 2. **Transformer Engine**: Orchestrates the transformation pipeline
 3. **File Watcher**: Monitors files for changes (optional)
 4. **Metrics Collector**: Gathers performance metrics (optional)

@@ -6,18 +6,18 @@ use std::path::Path;
 pub struct InputValidator;
 
 impl InputValidator {
-    /// Validate VRL script file exists and is readable
-    pub fn validate_vrl_script_file(script_path: &Path) -> Result<()> {
+    /// Validate transform script file exists and is readable
+    pub fn validate_script_file(script_path: &Path) -> Result<()> {
         if !script_path.exists() {
             return Err(anyhow!(
-                "VRL script file not found: {}",
+                "transform script file not found: {}",
                 script_path.display()
             ));
         }
 
         if !script_path.is_file() {
             return Err(anyhow!(
-                "VRL script path is not a file: {}",
+                "transform script path is not a file: {}",
                 script_path.display()
             ));
         }
@@ -25,7 +25,7 @@ impl InputValidator {
         // Check if file is readable by attempting to read metadata
         std::fs::metadata(script_path).map_err(|e| {
             anyhow!(
-                "Cannot read VRL script file {}: {}",
+                "Cannot read transform script file {}: {}",
                 script_path.display(),
                 e
             )
@@ -127,15 +127,15 @@ impl InputValidator {
         Ok(())
     }
 
-    /// Validate VRL script content syntax
-    pub fn validate_vrl_script_content(script_content: &str) -> Result<()> {
+    /// Validate transform script content syntax
+    pub fn validate_script_content(script_content: &str) -> Result<()> {
         if script_content.trim().is_empty() {
-            return Err(anyhow!("VRL script content is empty"));
+            return Err(anyhow!("transform script content is empty"));
         }
 
-        // Try to compile the VRL script to validate syntax
-        crate::vrl::VrlRuntime::new(script_content)
-            .map_err(|e| anyhow!("VRL script syntax error: {e}"))?;
+        // Try to compile the transform script to validate syntax
+        crate::runtime::VrlRuntime::new(script_content)
+            .map_err(|e| anyhow!("transform script syntax error: {e}"))?;
 
         Ok(())
     }
@@ -206,12 +206,12 @@ impl InputValidator {
 
     /// Comprehensive validation for transform command parameters
     pub fn validate_transform_params(
-        vrl_script: &Path,
+        script: &Path,
         input: &Path,
         output: &Path,
         batch_size: usize,
     ) -> Result<()> {
-        Self::validate_vrl_script_file(vrl_script)?;
+        Self::validate_script_file(script)?;
         Self::validate_input_path(input)?;
         Self::validate_output_path(output)?;
         Self::validate_batch_size(batch_size)?;
@@ -221,12 +221,12 @@ impl InputValidator {
     /// Comprehensive validation for watch command parameters
     #[cfg(feature = "watch-mode")]
     pub fn validate_watch_params(
-        vrl_script: &Path,
+        script: &Path,
         input: &Path,
         output: &Path,
         interval: u64,
     ) -> Result<()> {
-        Self::validate_vrl_script_file(vrl_script)?;
+        Self::validate_script_file(script)?;
         Self::validate_input_path(input)?;
         Self::validate_output_path(output)?;
         Self::validate_watch_interval(interval)?;
