@@ -37,7 +37,7 @@ static ERRORS: LazyLock<Vec<String>> = LazyLock::new(|| {
 });
 
 const DOCS_URL: &str = "https://vector.dev/docs/reference/vrl";
-const ERRORS_URL_ROOT: &str = "https://errors.vrl.dev";
+const ERRORS_URL_ROOT: &str = "https://infopercept.com/errors";
 const RESERVED_TERMS: &[&str] = &[
     "next",
     "prev",

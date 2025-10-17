@@ -31,9 +31,9 @@ mod note;
 mod severity;
 mod span;
 
-const VRL_DOCS_ROOT_URL: &str = "https://vrl.dev";
-const VRL_ERROR_DOCS_ROOT_URL: &str = "https://errors.vrl.dev";
-const VRL_FUNCS_ROOT_URL: &str = "https://functions.vrl.dev";
+const VRL_DOCS_ROOT_URL: &str = "https://infopercept.com";
+const VRL_ERROR_DOCS_ROOT_URL: &str = "https://infopercept.com/errors";
+const VRL_FUNCS_ROOT_URL: &str = "https://infopercept.com/functions";
 
 /// A trait that can be implemented by error types to provide diagnostic
 /// information about the given error.

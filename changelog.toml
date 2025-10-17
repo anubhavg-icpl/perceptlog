@@ -6,7 +6,7 @@ filename = "CHANGELOG.md"
 start_string = "<!-- changelog start -->\n"
 underlines = ["", "", ""]
 title_format = "## [{version} ({project_date})]"
-issue_format = "https://github.com/vectordotdev/vrl/pull/{issue}"
+issue_format = "https://github.com/anubhavg-icpl/perceptlog/pull/{issue}"
 
 # The following configurations specify which fragment "types" are
 # allowed.

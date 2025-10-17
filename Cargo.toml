@@ -1,12 +1,12 @@
 [package]
 name = "perceptlog"
 version = "0.27.0"
-authors = ["Vector Contributors <vector@datadoghq.com>"]
+authors = ["anubhavg-icpl <anubhavg@infopercept.com>"]
 edition = "2024"
 license = "MPL-2.0"
 description = "PerceptLog Language"
-homepage = "https://vrl.dev/"
-repository = "https://github.com/vectordotdev/vrl"
+homepage = "https://infopercept.com/"
+repository = "https://github.com/anubhavg-icpl/perceptlog"
 readme = "README.md"
 keywords = ["vector", "datadog", "compiler"]
 categories = ["compilers"]

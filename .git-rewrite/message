@@ -1,0 +1,43 @@
+enhancement(prometheus_scrape source): add support for custom request query parameters (#12033)
+
+* enhancement(prometheus_scrape source): add support for custom request query parameters
+
+A new optional configuration option has been added: `query` to the `prometheus_scrape` source.
+The option is modelled as a map of string keys to vector-of-strings values.
+This representation allows for multiple values for the same parameter key as allowed by the HTTP spec.
+It also mirrors the upstream Prometheus `params` option in the `scrape_config` section.
+
+Custom request parameters provided using `query` are appended to the `endpoints` URIs.
+All request query parameters are properly decoded/encoded from/to using `form_urlencoded`.
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* fix minor spelling typo
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* simplify for-loop and remove unnecessary dereferencing
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* fix unit to properly check that what was got is what was expected
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* use `r.map(|uri| ...)` construct instead of `if let Ok(uri) ...`
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* refactor test to simplify by comparing hashmaps directly
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* further simplify test code
+
+Signed-off-by: Hugo Hromic <hhromic@gmail.com>
+
+* Fix examples
+
+Signed-off-by: Jesse Szwedko <jesse@szwedko.me>
+
+Co-authored-by: Jesse Szwedko <jesse@szwedko.me>
