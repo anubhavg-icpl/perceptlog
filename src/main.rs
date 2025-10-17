@@ -1,12 +1,10 @@
 // src/main.rs - CLI application
-use anyhow::{Context, Result};
+use anyhow::Result;
 use clap::{Parser, Subcommand};
-use perceptlog::{
-    OcsfEvent, OcsfTransformer, TransformResult, TransformerConfig, config::OutputFormat,
-};
+use perceptlog::{OcsfTransformer, TransformerConfig, config::OutputFormat};
 use std::path::PathBuf;
 use tokio::fs;
-use tracing::{error, info, warn};
+use tracing::{error, info};
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
 
 #[derive(Parser)]
@@ -255,13 +253,13 @@ async fn process_directory(
     info!("Processing directory: {}", input_dir.display());
 
     let mut entries = fs::read_dir(input_dir).await?;
-    let mut total_events = 0;
+    let total_events = 0;
     let mut processed_files = 0;
     let mut failed_files = 0;
 
     while let Some(entry) = entries.next_entry().await? {
         let path = entry.path();
-        if path.is_file() && path.extension().map_or(false, |e| e == "log") {
+        if path.is_file() && path.extension().is_some_and(|e| e == "log") {
             match process_single_file(transformer, &path, output_dir, format, pretty).await {
                 Ok(_) => {
                     processed_files += 1;
@@ -301,7 +299,7 @@ async fn write_events(
         }
         OutputFormat::Ndjson => events
             .iter()
-            .map(|e| serde_json::to_string(e))
+            .map(serde_json::to_string)
             .collect::<Result<Vec<_>, _>>()?
             .join("\n"),
         OutputFormat::Yaml => serde_yaml::to_string(events)?,
@@ -341,7 +339,7 @@ async fn convert_command(vector_config: PathBuf, output: Option<PathBuf>) -> Res
         fs::write(&output_path, toml_output).await?;
         info!("Wrote configuration to {}", output_path.display());
     } else {
-        println!("{}", toml_output);
+        println!("{toml_output}");
     }
 
     Ok(())
@@ -353,7 +351,7 @@ async fn run_command(config_path: PathBuf) -> Result<()> {
     let config = TransformerConfig::from_file(&config_path)?;
     config
         .validate()
-        .map_err(|e| anyhow::anyhow!("Configuration validation failed: {}", e))?;
+        .map_err(|e| anyhow::anyhow!("Configuration validation failed: {e}"))?;
 
     let transformer = OcsfTransformer::with_config(config.clone()).await?;
 
@@ -414,7 +412,7 @@ async fn metrics_command(port: u16) -> Result<()> {
     info!("Starting metrics server on port {}", port);
     start_metrics_server(port)
         .await
-        .map_err(|e| anyhow::anyhow!("Metrics server error: {}", e))?;
+        .map_err(|e| anyhow::anyhow!("Metrics server error: {e}"))?;
 
     Ok(())
 }

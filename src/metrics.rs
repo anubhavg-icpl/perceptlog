@@ -1,5 +1,4 @@
 // src/metrics.rs - Metrics collection and reporting
-use std::sync::Arc;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::Duration;
 
@@ -12,6 +11,12 @@ pub struct Metrics {
 }
 
 #[cfg(feature = "metrics-support")]
+impl Default for Metrics {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Metrics {
     pub fn new() -> Self {
         Self {

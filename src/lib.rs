@@ -1,10 +1,8 @@
 // src/lib.rs - Core library implementation
-use anyhow::{Context, Result};
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
-use std::path::{Path, PathBuf};
-use tracing::{debug, error, info, warn};
-use vrl::compiler::{CompileConfig, Program, TargetValueRef, TimeZone, state::RuntimeState};
+use vrl::compiler::{Program, TimeZone};
 use vrl::prelude::*;
 use vrl::value::ObjectMap;
 
@@ -181,7 +179,7 @@ impl VrlRuntime {
     pub fn new(vrl_script: &str) -> Result<Self> {
         // Parse and compile the VRL program
         let program = vrl::compiler::compile(vrl_script, &vrl::stdlib::all())
-            .map_err(|e| anyhow::anyhow!("Failed to compile VRL script: {:?}", e))?
+            .map_err(|e| anyhow::anyhow!("Failed to compile VRL script: {e:?}"))?
             .program;
 
         Ok(Self {

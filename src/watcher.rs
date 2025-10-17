@@ -10,7 +10,7 @@ use std::sync::Arc;
 #[cfg(feature = "watch-mode")]
 use tokio::sync::mpsc;
 #[cfg(feature = "watch-mode")]
-use tracing::{debug, error, info, warn};
+use tracing::{debug, error, info};
 
 #[cfg(feature = "watch-mode")]
 pub struct FileWatcher {
@@ -83,7 +83,7 @@ impl FileWatcher {
         path.is_file()
             && path
                 .extension()
-                .map_or(false, |ext| ext == "log" || ext == "txt" || ext == "secure")
+                .is_some_and(|ext| ext == "log" || ext == "txt" || ext == "secure")
     }
 
     async fn process_file(&self, path: &Path) {

@@ -3,15 +3,12 @@ use crate::{
     LogEvent, OcsfEvent, TransformResult, VrlRuntime, config::TransformerConfig,
     error::TransformError, vrl_value_to_serde_json,
 };
-use anyhow::{Context, Result};
 use futures::StreamExt;
-use serde_json::Value as JsonValue;
 use std::fs;
 use std::path::Path;
 use std::sync::Arc;
 use tokio::sync::RwLock;
-use tracing::{debug, error, info, warn};
-use uuid::Uuid;
+use tracing::{debug, info, warn};
 use vrl::prelude::Value;
 
 /// Main transformer struct that handles log to OCSF transformation
@@ -148,7 +145,7 @@ impl OcsfTransformer {
     ) -> TransformResult<impl futures::Stream<Item = TransformResult<OcsfEvent>>> {
         use tokio::fs::File;
         use tokio::io::{AsyncBufReadExt, BufReader};
-        use tokio_stream::StreamExt;
+
         use tokio_stream::wrappers::LinesStream;
 
         let file = File::open(file_path.as_ref())

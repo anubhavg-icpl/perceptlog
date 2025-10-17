@@ -85,7 +85,7 @@ impl fmt::Display for BatchError {
         if !self.errors.is_empty() {
             writeln!(f, "\nErrors:")?;
             for (index, error) in &self.errors {
-                writeln!(f, "  Line {}: {}", index, error)?;
+                writeln!(f, "  Line {index}: {error}")?;
             }
         }
 
@@ -140,7 +140,7 @@ where
     fn context(self, msg: &str) -> Result<T, TransformError> {
         self.map_err(|e| {
             let base_error = e.into();
-            TransformError::Unknown(format!("{}: {}", msg, base_error))
+            TransformError::Unknown(format!("{msg}: {base_error}"))
         })
     }
 
