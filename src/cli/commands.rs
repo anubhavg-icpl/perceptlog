@@ -1,10 +1,10 @@
 // src/commands.rs - CLI command handlers module
 use crate::{
-    config::{OutputFormat, TransformerConfig},
+    core::config::{OutputFormat, TransformerConfig},
     io::{FileReader, FileWriter},
     output::OutputFormatter,
-    transformer::OcsfTransformer,
-    validation::InputValidator,
+    processing::transformer::OcsfTransformer,
+    utils::validation::InputValidator,
 };
 use anyhow::Result;
 use std::path::{Path, PathBuf};
@@ -146,7 +146,7 @@ impl TransformCommand {
 
     /// Write events to output file
     async fn write_events(
-        events: &[crate::ocsf::OcsfEvent],
+        events: &[crate::processing::ocsf::OcsfEvent],
         output_file: &Path,
         format: OutputFormat,
         pretty: bool,
@@ -190,7 +190,7 @@ impl ConvertCommand {
         info!("Converting Vector config: {}", vector_config.display());
 
         let content = fs::read_to_string(&vector_config).await?;
-        let vector_cfg = crate::config::VectorConfig::from_toml(&content)?;
+        let vector_cfg = crate::core::config::VectorConfig::from_toml(&content)?;
         let transformer_cfg = vector_cfg.to_transformer_config();
 
         let output_path = output.unwrap_or_else(|| PathBuf::from("transformer_config.toml"));
@@ -264,7 +264,7 @@ impl WatchCommand {
         output: PathBuf,
         interval: u64,
     ) -> Result<()> {
-        use crate::watcher::FileWatcher;
+        use crate::io::watcher::FileWatcher;
 
         info!("Starting watch mode");
         info!("VRL Script: {}", vrl_script.display());
@@ -288,7 +288,7 @@ pub struct MetricsCommand;
 impl MetricsCommand {
     /// Execute the metrics command
     pub async fn execute(port: u16) -> Result<()> {
-        use crate::metrics::start_metrics_server;
+        use crate::utils::metrics::start_metrics_server;
 
         info!("Starting metrics server on port {}", port);
         start_metrics_server(port)

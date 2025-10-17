@@ -1,50 +1,34 @@
 // src/lib.rs - Core library implementation
-use serde::{Deserialize, Serialize};
-use std::collections::BTreeMap;
 
-// Public modules
-pub mod commands;
-pub mod config;
-pub mod error;
+// Public modules organized by functionality
+pub mod cli;
+pub mod core;
 pub mod io;
-pub mod metrics;
-pub mod ocsf;
 pub mod output;
-pub mod transformer;
-pub mod validation;
-pub mod vrl;
-pub mod watcher;
+pub mod processing;
+pub mod utils;
 
-// Re-exports for convenience
-pub use config::TransformerConfig;
-pub use error::TransformError;
-pub use ocsf::OcsfEvent;
-pub use transformer::OcsfTransformer;
+// Re-exports for convenience and backward compatibility
+pub use core::{
+    TransformError, TransformResult, TransformerConfig, OutputFormat, LogEvent
+};
+pub use processing::{
+    OcsfEvent, OcsfTransformer, OcsfEventBuilder, VrlRuntime
+};
+pub use io::{FileReader, FileWriter, FileWatcher};
+pub use output::{OutputFormatter, StreamingOutputFormatter};
+pub use utils::{InputValidator, ValidationResult};
+pub use cli::{Cli, Commands};
 
-/// Result type alias for library operations
-pub type TransformResult<T> = std::result::Result<T, TransformError>;
+// Make commonly used submodules available at the crate root for a cleaner API
+pub use cli::commands as commands;
+pub use core::config as config;
+pub use processing::vrl as vrl;
 
-/// Represents a single log event to be transformed
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct LogEvent {
-    pub message: String,
-    #[serde(flatten)]
-    pub metadata: BTreeMap<String, serde_json::Value>,
-}
-
-impl LogEvent {
-    pub fn new(message: impl Into<String>) -> Self {
-        Self {
-            message: message.into(),
-            metadata: BTreeMap::new(),
-        }
-    }
-
-    pub fn with_metadata(mut self, key: impl Into<String>, value: serde_json::Value) -> Self {
-        self.metadata.insert(key.into(), value);
-        self
-    }
-}
+// Backwards-compatible module aliases used by internal paths
+pub use core::error as error;
+pub use processing::ocsf as ocsf;
+pub use utils::metrics as metrics;
 
 #[cfg(test)]
 mod tests {

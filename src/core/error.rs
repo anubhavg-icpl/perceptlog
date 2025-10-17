@@ -33,6 +33,9 @@ pub enum TransformError {
     Unknown(String),
 }
 
+/// Result type used across the crate for operations that may return a TransformError
+pub type TransformResult<T> = Result<T, TransformError>;
+
 impl From<std::io::Error> for TransformError {
     fn from(err: std::io::Error) -> Self {
         TransformError::IoError(err.to_string())
@@ -170,12 +173,10 @@ mod tests {
 
     #[test]
     fn test_batch_error_display() {
-        let mut errors = Vec::new();
-        errors.push((10, TransformError::ParseError("Invalid format".to_string())));
-        errors.push((
-            15,
-            TransformError::ValidationError("Missing field".to_string()),
-        ));
+        let errors = vec![
+            (10, TransformError::ParseError("Invalid format".to_string())),
+            (15, TransformError::ValidationError("Missing field".to_string())),
+        ];
 
         let batch_err = BatchError {
             successful: 100,

@@ -269,7 +269,7 @@ mod tests {
         "#;
 
         let mut temp_file = NamedTempFile::with_suffix(".toml").unwrap();
-        write!(temp_file, "{}", toml_content).unwrap();
+        write!(temp_file, "{toml_content}").unwrap();
         temp_file.flush().unwrap();
 
         let config = TransformerConfig::from_file(temp_file.path()).unwrap();

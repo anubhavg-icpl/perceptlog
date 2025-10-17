@@ -255,7 +255,7 @@ mod tests {
 
         // Create temporary VRL script file
         let mut vrl_file = NamedTempFile::new().unwrap();
-        write!(vrl_file, "{}", vrl_script).unwrap();
+        write!(vrl_file, "{vrl_script}").unwrap();
         vrl_file.flush().unwrap();
 
         let transformer = OcsfTransformer::new(vrl_file.path()).await.unwrap();
