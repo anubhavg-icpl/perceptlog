@@ -175,7 +175,7 @@ impl ValidateCommand {
             }
             Err(e) => {
                 error!("✗ VRL script validation failed: {}", e);
-                Err(anyhow::anyhow!("VRL script validation failed: {}", e))
+                Err(anyhow::anyhow!("VRL script validation failed: {e}"))
             }
         }
     }
@@ -213,7 +213,7 @@ impl RunCommand {
         let config = TransformerConfig::from_file(&config_path)?;
         config
             .validate()
-            .map_err(|e| anyhow::anyhow!("Configuration validation failed: {}", e))?;
+            .map_err(|e| anyhow::anyhow!("Configuration validation failed: {e}"))?;
 
         let transformer = OcsfTransformer::with_config(config.clone()).await?;
 
@@ -293,7 +293,7 @@ impl MetricsCommand {
         info!("Starting metrics server on port {}", port);
         start_metrics_server(port)
             .await
-            .map_err(|e| anyhow::anyhow!("Metrics server error: {}", e))?;
+            .map_err(|e| anyhow::anyhow!("Metrics server error: {e}"))?;
 
         Ok(())
     }

@@ -93,9 +93,9 @@ impl OutputFormatter {
 
         if include_timestamp {
             let timestamp = chrono::Utc::now().format("%Y%m%d_%H%M%S");
-            format!("{}_{}.{}", base_name, timestamp, extension)
+            format!("{base_name}_{timestamp}.{extension}")
         } else {
-            format!("{}.{}", base_name, extension)
+            format!("{base_name}.{extension}")
         }
     }
 

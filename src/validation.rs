@@ -114,8 +114,7 @@ impl InputValidator {
             let ext_str = extension.to_string_lossy().to_lowercase();
             if !["toml", "yaml", "yml", "json"].contains(&ext_str.as_str()) {
                 return Err(anyhow!(
-                    "Unsupported configuration file format: {}. Supported formats: toml, yaml, yml, json",
-                    ext_str
+                    "Unsupported configuration file format: {ext_str}. Supported formats: toml, yaml, yml, json"
                 ));
             }
         } else {
@@ -136,7 +135,7 @@ impl InputValidator {
 
         // Try to compile the VRL script to validate syntax
         crate::vrl::VrlRuntime::new(script_content)
-            .map_err(|e| anyhow!("VRL script syntax error: {}", e))?;
+            .map_err(|e| anyhow!("VRL script syntax error: {e}"))?;
 
         Ok(())
     }
@@ -149,8 +148,7 @@ impl InputValidator {
 
         if batch_size > 10000 {
             return Err(anyhow!(
-                "Batch size too large (max: 10000), got: {}",
-                batch_size
+                "Batch size too large (max: 10000), got: {batch_size}"
             ));
         }
 
@@ -165,8 +163,7 @@ impl InputValidator {
 
         if interval > 3600 {
             return Err(anyhow!(
-                "Watch interval too large (max: 3600 seconds), got: {}",
-                interval
+                "Watch interval too large (max: 3600 seconds), got: {interval}"
             ));
         }
 
@@ -176,7 +173,7 @@ impl InputValidator {
     /// Validate metrics port parameter
     pub fn validate_metrics_port(port: u16) -> Result<()> {
         if port < 1024 {
-            return Err(anyhow!("Port number too low (min: 1024), got: {}", port));
+            return Err(anyhow!("Port number too low (min: 1024), got: {port}"));
         }
 
         Ok(())
@@ -202,7 +199,7 @@ impl InputValidator {
     pub fn validate_file_patterns(patterns: &[String]) -> Result<()> {
         for pattern in patterns {
             glob::Pattern::new(pattern)
-                .map_err(|e| anyhow!("Invalid file pattern '{}': {}", pattern, e))?;
+                .map_err(|e| anyhow!("Invalid file pattern '{pattern}': {e}"))?;
         }
         Ok(())
     }
