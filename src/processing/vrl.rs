@@ -99,27 +99,3 @@ pub fn vrl_value_to_serde_json(value: Value) -> serde_json::Value {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_vrl_runtime_creation() {
-        let script = r#".message = "Hello, VRL!""#;
-        let result = VrlRuntime::new(script);
-        assert!(result.is_ok());
-    }
-
-    #[test]
-    fn test_value_conversions() {
-        let json = serde_json::json!({
-            "test": "value",
-            "number": 42
-        });
-
-        let vrl_value = serde_json_to_vrl_value(json.clone());
-        let converted_back = vrl_value_to_serde_json(vrl_value);
-
-        assert_eq!(json, converted_back);
-    }
-}

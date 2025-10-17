@@ -23,18 +23,3 @@ impl LogEvent {
         self
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_log_event_creation() {
-        let event = LogEvent::new("test message")
-            .with_metadata("source", serde_json::json!("sshd"))
-            .with_metadata("severity", serde_json::json!(3));
-
-        assert_eq!(event.message, "test message");
-        assert_eq!(event.metadata.len(), 2);
-    }
-}

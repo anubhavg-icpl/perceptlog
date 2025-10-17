@@ -1,0 +1,16 @@
+vrl_script_path = "remap.vrl"
+input_path = "/var/log/auth.log"
+output_path = "./ocsf_output"
+output_format = "ndjson"
+batch_size = 100
+skip_errors = true
+watch_mode = false
+watch_interval = 5
+enable_metrics = false
+metrics_port = 9090
+log_level = "info"
+pretty_print = false
+max_workers = 8
+include_patterns = []
+exclude_patterns = []
+hot_reload = false

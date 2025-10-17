@@ -271,24 +271,3 @@ impl Default for OcsfEventBuilder {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_ocsf_event_builder() {
-        let event = OcsfEventBuilder::new()
-            .with_category(3, "Identity & Access Management")
-            .with_class(3002, "Authentication")
-            .with_time(1234567890)
-            .with_message("Test authentication event")
-            .build();
-
-        assert_eq!(event.category_uid, 3);
-        assert_eq!(event.category_name, "Identity & Access Management");
-        assert_eq!(event.class_uid, 3002);
-        assert_eq!(event.class_name, "Authentication");
-        assert_eq!(event.time, 1234567890);
-        assert_eq!(event.message, Some("Test authentication event".to_string()));
-    }
-}

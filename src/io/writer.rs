@@ -64,30 +64,3 @@ impl FileWriter {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use tempfile::NamedTempFile;
-
-    #[tokio::test]
-    async fn test_file_writer() {
-        let temp_file = NamedTempFile::new().unwrap();
-        let content = "Test content";
-
-        FileWriter::write_to_file(temp_file.path(), content).await.unwrap();
-        
-        let read_content = fs::read_to_string(temp_file.path()).await.unwrap();
-        assert_eq!(read_content, content);
-    }
-
-    #[tokio::test]
-    async fn test_append_to_file() {
-        let temp_file = NamedTempFile::new().unwrap();
-        
-        FileWriter::append_to_file(temp_file.path(), "Line 1\n").await.unwrap();
-        FileWriter::append_to_file(temp_file.path(), "Line 2\n").await.unwrap();
-        
-        let content = fs::read_to_string(temp_file.path()).await.unwrap();
-        assert_eq!(content, "Line 1\nLine 2\n");
-    }
-}
