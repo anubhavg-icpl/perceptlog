@@ -10,7 +10,7 @@ use perceptlog::test::{get_tests_from_functions, run_tests, test_dir, Test, Test
 static ALLOC: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
 
 #[derive(Parser, Debug)]
-#[clap(name = "VRL Tests", about = "Vector Remap Language Tests")]
+#[clap(name = "VRL Tests", about = "Infopercept Remap Language Tests")]
 pub struct Cmd {
     #[clap(short, long)]
     pattern: Option<String>,

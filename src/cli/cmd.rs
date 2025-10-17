@@ -24,7 +24,7 @@ use super::Error;
 use super::repl;
 
 #[derive(Parser, Debug)]
-#[command(name = "VRL", about = "Vector Remap Language CLI")]
+#[command(name = "VRL", about = "Infopercept Remap Language CLI")]
 pub struct Opts {
     /// The VRL program to execute. The program ".foo = true", for example, sets the event object's
     /// `foo` field to `true`.

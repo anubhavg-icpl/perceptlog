@@ -1,4 +1,4 @@
-# Vector Remap Language Test Harness
+# Infopercept Remap Language Test Harness
 
 This test harness allows us to run a variety of test cases against the latest
 build of VRL.
