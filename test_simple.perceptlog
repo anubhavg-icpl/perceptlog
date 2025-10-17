@@ -1,0 +1,23 @@
+# Simple test script
+.test_field = "transformed"
+.category_uid = 3
+.class_uid = 3002
+.time = 1234567890
+.activity_id = 1
+.activity_name = "Logon"
+.status = "Success"
+.status_id = 1
+.severity_id = 1
+.severity = "Informational"
+.type_uid = 300201
+.type_name = "Authentication: Logon"
+.category_name = "Identity & Access Management"
+.class_name = "Authentication"
+.metadata = {
+  "version": "1.6.0",
+  "product": {
+    "vendor_name": "PerceptLog",
+    "name": "Test"
+  }
+}
+.

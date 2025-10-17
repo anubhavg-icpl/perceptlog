@@ -1,0 +1,600 @@
+Aug 30 00:47:49 fedora sudo[1331969]:   sohil : TTY=pts/7 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/tar -xvzf /home/sohil/Downloads/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+Aug 30 00:47:49 fedora (systemd)[1331983]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 30 00:47:49 fedora sudo[1331969]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 00:47:49 fedora sudo[1331969]: pam_unix(sudo:session): session closed for user root
+Aug 30 01:33:41 fedora gdm-password][1366996]: gkr-pam: the password for the login keyring was invalid.
+Aug 30 01:39:36 fedora sudo[1372167]:   sohil : TTY=pts/8 ; PWD=/home/sohil/Downloads ; USER=root ; COMMAND=/usr/sbin/systemctl stop opensearch
+Aug 30 01:39:36 fedora (systemd)[1372174]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 30 01:39:36 fedora sudo[1372167]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 01:39:36 fedora sudo[1372167]: pam_unix(sudo:session): session closed for user root
+Aug 30 01:39:44 fedora sudo[1372267]:   sohil : TTY=pts/8 ; PWD=/home/sohil/Downloads ; USER=root ; COMMAND=/usr/sbin/systemctl daemon-reload
+Aug 30 01:39:44 fedora sudo[1372267]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 01:39:45 fedora sudo[1372267]: pam_unix(sudo:session): session closed for user root
+Aug 30 01:39:46 fedora sudo[1372456]:   sohil : TTY=pts/8 ; PWD=/home/sohil/Downloads ; USER=root ; COMMAND=/usr/sbin/systemctl stop opensearch
+Aug 30 01:39:46 fedora sudo[1372456]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 01:39:46 fedora sudo[1372456]: pam_unix(sudo:session): session closed for user root
+Aug 30 01:40:29 fedora sudo[1372775]:   sohil : TTY=pts/8 ; PWD=/home/sohil/Downloads ; USER=root ; COMMAND=/usr/sbin/systemctl stop opensearch-dashboards.service
+Aug 30 01:40:29 fedora (systemd)[1372779]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 30 01:40:30 fedora sudo[1372775]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 01:40:30 fedora sudo[1372775]: pam_unix(sudo:session): session closed for user root
+Aug 30 03:08:31 fedora gdm-password][1418679]: gkr-pam: the password for the login keyring was invalid.
+Aug 30 05:52:14 fedora gdm-password][1521964]: gkr-pam: the password for the login keyring was invalid.
+Aug 30 06:41:44 fedora gdm-password][1543819]: gkr-pam: the password for the login keyring was invalid.
+Aug 30 08:11:40 fedora sudo[1576840]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Aug 30 08:11:40 fedora (systemd)[1576856]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 30 08:11:40 fedora sudo[1576840]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 08:11:40 fedora sudo[1576840]: pam_unix(sudo:session): session closed for user root
+Aug 30 08:11:50 fedora sudo[1576920]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/kill -9 1571361
+Aug 30 08:11:50 fedora sudo[1576920]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 30 08:11:50 fedora sudo[1576920]: pam_unix(sudo:session): session closed for user root
+Aug 30 08:20:27 fedora gdm-password][1580152]: gkr-pam: the password for the login keyring was invalid.
+Aug 31 00:27:26 fedora gdm-password][1581305]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Aug 31 00:27:26 fedora gdm-password][1581305]: gkr-pam: the password for the login keyring was invalid.
+Aug 31 00:27:32 fedora gdm-password][1581884]: gkr-pam: the password for the login keyring was invalid.
+Aug 31 00:44:35 fedora gdm-password][1586063]: gkr-pam: the password for the login keyring was invalid.
+Aug 31 00:49:14 fedora sudo[1588494]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/lsof -p 3000
+Aug 31 00:49:14 fedora (systemd)[1588545]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 31 00:49:15 fedora sudo[1588494]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 31 00:49:15 fedora sudo[1588494]: pam_unix(sudo:session): session closed for user root
+Aug 31 00:49:36 fedora sudo[1588680]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/lsof -i
+Aug 31 00:49:36 fedora (systemd)[1588685]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 31 00:49:36 fedora sudo[1588680]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 31 00:49:39 fedora sudo[1588680]: pam_unix(sudo:session): session closed for user root
+Aug 31 00:50:31 fedora sudo[1589010]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/lsof -i :3000
+Aug 31 00:50:31 fedora (systemd)[1589014]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Aug 31 00:50:32 fedora sudo[1589010]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 31 00:50:32 fedora sudo[1589010]: pam_unix(sudo:session): session closed for user root
+Aug 31 00:50:35 fedora sudo[1589075]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/lsof -i :3001
+Aug 31 00:50:35 fedora sudo[1589075]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Aug 31 00:50:35 fedora sudo[1589075]: pam_unix(sudo:session): session closed for user root
+Aug 31 02:14:48 fedora (systemd)[1743]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Aug 31 02:14:49 fedora gdm-launch-environment][1691]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Aug 31 16:11:59 fedora gdm-password][3270]: gkr-pam: unable to locate daemon control file
+Aug 31 16:11:59 fedora gdm-password][3270]: gkr-pam: stashed password to try later in open session
+Aug 31 16:11:59 fedora (systemd)[3322]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Aug 31 16:12:00 fedora gdm-password][3270]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Aug 31 16:12:00 fedora gdm-password][3270]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Aug 31 16:12:02 fedora gdm-launch-environment][1691]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Aug 31 16:12:02 fedora polkitd[1303]: Error converting subject to JS object: Process 2340 terminated
+Aug 31 16:22:14 fedora gdm-password][13715]: gkr-pam: unlocked login keyring
+Aug 31 16:28:45 fedora gdm-password][15958]: gkr-pam: unlocked login keyring
+Aug 31 16:34:02 fedora gdm-password][17767]: gkr-pam: unlocked login keyring
+Aug 31 16:54:32 fedora gdm-password][24777]: gkr-pam: unlocked login keyring
+Aug 31 17:04:20 fedora gdm-password][28901]: gkr-pam: unlocked login keyring
+Aug 31 19:38:07 fedora gdm-password][134627]: gkr-pam: unlocked login keyring
+Aug 31 21:33:22 fedora unix_chkpwd[226324]: password check failed for user (sohil)
+Aug 31 21:33:22 fedora gdm-password][226318]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Aug 31 21:33:22 fedora gdm-password][226318]: gkr-pam: the password for the login keyring was invalid.
+Aug 31 23:38:01 fedora (systemd)[1789]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Aug 31 23:38:01 fedora gdm-launch-environment][1738]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Aug 31 23:45:06 fedora gdm-password][8847]: gkr-pam: unable to locate daemon control file
+Aug 31 23:45:06 fedora gdm-password][8847]: gkr-pam: stashed password to try later in open session
+Aug 31 23:45:07 fedora (systemd)[8881]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Aug 31 23:45:07 fedora gdm-password][8847]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Aug 31 23:45:07 fedora gdm-password][8847]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Aug 31 23:45:09 fedora gdm-launch-environment][1738]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Aug 31 23:45:09 fedora polkitd[1306]: Error converting subject to JS object: Process 2445 terminated
+Sep  1 09:46:14 fedora gdm-password][41723]: gkr-pam: unlocked login keyring
+Sep  1 10:29:01 fedora sudo[69335]:   sohil : TTY=pts/2 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep  1 10:29:01 fedora (systemd)[69372]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  1 10:29:02 fedora sudo[69335]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  1 10:29:02 fedora su[69394]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  1 10:33:45 fedora sudo[72834]:    root : TTY=pts/3 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/systemctl restart opensearch-dashboards.service
+Sep  1 10:33:45 fedora sudo[72834]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  1 10:33:46 fedora sudo[72834]: pam_unix(sudo:session): session closed for user root
+Sep  1 12:58:48 fedora gdm-password][123544]: gkr-pam: unlocked login keyring
+Sep  1 14:05:56 fedora gdm-password][140555]: gkr-pam: unlocked login keyring
+Sep  1 15:16:35 fedora sudo[171927]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  1 15:16:35 fedora sudo[171927]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  1 15:16:35 fedora sudo[171927]: pam_unix(sudo:session): session closed for user root
+Sep  1 15:16:45 fedora sudo[172020]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/kill -9 168644
+Sep  1 15:16:45 fedora sudo[172020]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  1 15:16:45 fedora sudo[172020]: pam_unix(sudo:session): session closed for user root
+Sep  1 15:55:06 fedora unix_chkpwd[186629]: password check failed for user (sohil)
+Sep  1 15:55:06 fedora sudo[186596]: pam_unix(sudo:auth): authentication failure; logname=sohil uid=1000 euid=0 tty=/dev/pts/6 ruser=sohil rhost=  user=sohil
+Sep  1 15:55:10 fedora sudo[186596]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  1 15:55:10 fedora sudo[186596]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  1 15:55:10 fedora sudo[186596]: pam_unix(sudo:session): session closed for user root
+Sep  1 15:55:19 fedora sudo[186797]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/kill -9 185617
+Sep  1 15:55:19 fedora sudo[186797]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  1 15:55:19 fedora sudo[186797]: pam_unix(sudo:session): session closed for user root
+Sep  1 16:48:10 fedora gdm-password][205704]: gkr-pam: unlocked login keyring
+Sep  1 17:08:06 fedora gdm-password][206442]: gkr-pam: unlocked login keyring
+Sep  1 18:56:51 fedora gdm-password][229853]: gkr-pam: unlocked login keyring
+Sep  2 09:31:30 fedora gdm-password][230722]: gkr-pam: unlocked login keyring
+Sep  2 12:20:48 fedora gdm-password][295579]: gkr-pam: unlocked login keyring
+Sep  2 12:37:13 fedora sudo[301895]:   sohil : TTY=pts/6 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep  2 12:37:13 fedora sudo[301895]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  2 12:37:13 fedora su[301907]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  2 12:38:20 fedora sudo[302307]:    root : TTY=pts/9 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/systemctl restart opensearch-dashboards.service
+Sep  2 12:38:20 fedora sudo[302307]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  2 12:38:20 fedora sudo[302307]: pam_unix(sudo:session): session closed for user root
+Sep  2 13:24:06 fedora gdm-password][316000]: gkr-pam: unlocked login keyring
+Sep  2 14:01:40 fedora gdm-password][329223]: gkr-pam: unlocked login keyring
+Sep  2 15:16:18 fedora (systemd)[1743]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  2 15:16:18 fedora gdm-launch-environment][1707]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  2 15:16:46 fedora gdm-password][4018]: gkr-pam: unable to locate daemon control file
+Sep  2 15:16:46 fedora gdm-password][4018]: gkr-pam: stashed password to try later in open session
+Sep  2 15:16:46 fedora (systemd)[4053]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  2 15:16:46 fedora gdm-password][4018]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  2 15:16:46 fedora gdm-password][4018]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  2 15:16:49 fedora gdm-launch-environment][1707]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  2 17:31:50 fedora gdm-password][98887]: gkr-pam: unlocked login keyring
+Sep  2 18:18:12 fedora gdm-password][115165]: gkr-pam: unlocked login keyring
+Sep  2 22:31:21 fedora (systemd)[1760]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  2 22:31:21 fedora gdm-launch-environment][1724]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  2 22:31:28 fedora gdm-password][2957]: gkr-pam: unable to locate daemon control file
+Sep  2 22:31:28 fedora gdm-password][2957]: gkr-pam: stashed password to try later in open session
+Sep  2 22:31:28 fedora (systemd)[2968]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  2 22:31:28 fedora gdm-password][2957]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  2 22:31:28 fedora gdm-password][2957]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  2 22:31:31 fedora gdm-launch-environment][1724]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  2 22:31:31 fedora polkitd[1311]: Error converting subject to JS object: Process 2347 terminated
+Sep  2 22:50:39 fedora gdm-password][23674]: gkr-pam: unlocked login keyring
+Sep  3 00:29:12 fedora gdm-password][25049]: gkr-pam: unlocked login keyring
+Sep  3 01:03:25 fedora unix_chkpwd[37438]: password check failed for user (sohil)
+Sep  3 01:03:25 fedora gdm-password][37430]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  3 01:03:25 fedora gdm-password][37430]: gkr-pam: the password for the login keyring was invalid.
+Sep  3 01:03:35 fedora gdm-password][37480]: gkr-pam: unlocked login keyring
+Sep  3 10:00:58 fedora gdm-password][37949]: gkr-pam: unlocked login keyring
+Sep  3 10:13:24 fedora (systemd)[1746]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  3 10:13:24 fedora gdm-launch-environment][1709]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  3 10:14:12 fedora gdm-password][4324]: gkr-pam: unable to locate daemon control file
+Sep  3 10:14:12 fedora gdm-password][4324]: gkr-pam: stashed password to try later in open session
+Sep  3 10:14:13 fedora (systemd)[4359]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  3 10:14:13 fedora gdm-password][4324]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  3 10:14:13 fedora gdm-password][4324]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  3 10:14:15 fedora gdm-launch-environment][1709]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  3 10:14:15 fedora polkitd[1305]: Error converting subject to JS object: Process 2478 terminated
+Sep  3 10:29:49 fedora gdm-password][15462]: gkr-pam: unlocked login keyring
+Sep  3 10:39:43 fedora gdm-password][21744]: gkr-pam: unlocked login keyring
+Sep  3 11:00:50 fedora gdm-password][36663]: gkr-pam: unlocked login keyring
+Sep  3 11:37:41 fedora gdm-password][51665]: gkr-pam: unlocked login keyring
+Sep  3 14:30:45 fedora gdm-password][106612]: gkr-pam: unlocked login keyring
+Sep  3 18:31:33 fedora gdm-password][212831]: gkr-pam: unlocked login keyring
+Sep  3 21:46:40 fedora gdm-password][213461]: gkr-pam: unlocked login keyring
+Sep  3 21:51:14 fedora gdm-password][214745]: gkr-pam: unlocked login keyring
+Sep  3 22:17:14 fedora gdm-password][221133]: gkr-pam: unlocked login keyring
+Sep  3 23:08:22 fedora gdm-password][235294]: gkr-pam: unlocked login keyring
+Sep  3 23:15:06 fedora gdm-password][236985]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  3 23:15:06 fedora gdm-password][236985]: gkr-pam: the password for the login keyring was invalid.
+Sep  3 23:15:11 fedora gdm-password][237002]: gkr-pam: unlocked login keyring
+Sep  3 23:30:06 fedora unix_chkpwd[240668]: password check failed for user (sohil)
+Sep  3 23:30:06 fedora gdm-password][240440]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  3 23:30:06 fedora gdm-password][240440]: gkr-pam: the password for the login keyring was invalid.
+Sep  3 23:30:11 fedora gdm-password][240710]: gkr-pam: unlocked login keyring
+Sep  3 23:55:17 fedora gdm-password][248375]: gkr-pam: unlocked login keyring
+Sep  4 00:09:13 fedora gdm-password][252009]: gkr-pam: unlocked login keyring
+Sep  4 00:34:48 fedora (systemd)[1761]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  4 00:34:48 fedora gdm-launch-environment][1708]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  4 00:35:21 fedora gdm-password][4139]: gkr-pam: unable to locate daemon control file
+Sep  4 00:35:21 fedora gdm-password][4139]: gkr-pam: stashed password to try later in open session
+Sep  4 00:35:21 fedora (systemd)[4160]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  4 00:35:21 fedora gdm-password][4139]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  4 00:35:21 fedora gdm-password][4139]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  4 00:35:23 fedora gdm-launch-environment][1708]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  4 01:00:59 fedora gdm-password][19580]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  4 01:00:59 fedora gdm-password][19580]: gkr-pam: the password for the login keyring was invalid.
+Sep  4 01:01:05 fedora gdm-password][20120]: gkr-pam: unlocked login keyring
+Sep  4 09:49:26 fedora gdm-password][58416]: gkr-pam: unlocked login keyring
+Sep  4 10:29:19 fedora gdm-password][68326]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  4 10:29:19 fedora gdm-password][68326]: gkr-pam: the password for the login keyring was invalid.
+Sep  4 10:29:24 fedora gdm-password][68508]: gkr-pam: unlocked login keyring
+Sep  4 12:54:01 fedora sudo[117835]:   sohil : TTY=pts/1 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  4 12:54:01 fedora (systemd)[117849]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  4 12:54:01 fedora sudo[117835]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  4 12:54:01 fedora sudo[117835]: pam_unix(sudo:session): session closed for user root
+Sep  4 12:54:11 fedora sudo[117914]:   sohil : TTY=pts/1 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/kill -9 114194
+Sep  4 12:54:11 fedora sudo[117914]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  4 12:54:11 fedora sudo[117914]: pam_unix(sudo:session): session closed for user root
+Sep  4 14:03:00 fedora gdm-password][140002]: gkr-pam: unlocked login keyring
+Sep  4 14:43:10 fedora gdm-password][142532]: gkr-pam: unlocked login keyring
+Sep  4 14:47:52 fedora gdm-password][4139]: pam_unix(gdm-password:session): session closed for user sohil
+Sep  4 14:47:52 fedora polkitd[1304]: Error converting subject to JS object: Process 4566 terminated
+Sep  4 14:53:25 fedora (systemd)[1668]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  4 14:53:25 fedora gdm-launch-environment][1632]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  4 14:53:31 fedora gdm-password][3278]: gkr-pam: unable to locate daemon control file
+Sep  4 14:53:31 fedora gdm-password][3278]: gkr-pam: stashed password to try later in open session
+Sep  4 14:53:31 fedora (systemd)[3551]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  4 14:53:31 fedora gdm-password][3278]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  4 14:53:31 fedora gdm-password][3278]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  4 14:53:35 fedora gdm-launch-environment][1632]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  4 14:53:35 fedora polkitd[1225]: Error converting subject to JS object: Process 2546 terminated
+Sep  4 16:19:57 fedora gdm-password][53655]: gkr-pam: unlocked login keyring
+Sep  4 16:33:19 fedora gdm-password][58693]: gkr-pam: unlocked login keyring
+Sep  4 16:38:37 fedora gdm-password][60103]: gkr-pam: unlocked login keyring
+Sep  4 17:20:56 fedora gdm-password][73893]: gkr-pam: unlocked login keyring
+Sep  4 17:30:34 fedora sudo[76833]:   sohil : TTY=pts/5 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep  4 17:30:34 fedora (systemd)[76846]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  4 17:30:34 fedora sudo[76833]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  4 17:30:34 fedora su[76868]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:34:33 fedora sudo[78922]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:34:33 fedora sudo[78922]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:34:54 fedora sudo[78922]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:35:47 fedora sudo[79512]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:35:47 fedora sudo[79512]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:36:47 fedora sudo[79512]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:37:33 fedora sudo[80388]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:37:33 fedora sudo[80388]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:37:54 fedora sudo[80388]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:38:39 fedora sudo[80870]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:38:39 fedora sudo[80870]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:38:44 fedora sudo[80870]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:39:50 fedora sudo[81461]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:39:50 fedora sudo[81461]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:40:29 fedora sudo[81461]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:41:11 fedora sudo[82119]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:41:11 fedora sudo[82119]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:42:43 fedora sudo[82119]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:43:04 fedora sudo[83119]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:43:04 fedora sudo[83119]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:43:10 fedora sudo[83119]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:48:50 fedora sudo[84635]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:48:51 fedora sudo[84635]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:48:56 fedora sudo[84635]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:50:38 fedora sudo[85485]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/systemctl status opensearch-dashboards.service
+Sep  4 17:50:38 fedora sudo[85485]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:50:40 fedora sudo[85485]: pam_unix(sudo:session): session closed for user root
+Sep  4 17:50:51 fedora sudo[85532]:    root : TTY=pts/6 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/journalctl -u opensearch-dashboards -f
+Sep  4 17:50:51 fedora sudo[85532]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  4 17:54:10 fedora sudo[85532]: pam_unix(sudo:session): session closed for user root
+Sep  5 07:34:58 fedora gdm-password][114156]: gkr-pam: unlocked login keyring
+Sep  5 07:35:36 fedora su[76868]: pam_unix(su:session): session closed for user root
+Sep  5 07:35:36 fedora sudo[76833]: pam_unix(sudo:session): session closed for user root
+Sep  5 07:41:14 fedora gdm-password][116065]: gkr-pam: unlocked login keyring
+Sep  6 10:40:31 fedora gdm-password][121388]: gkr-pam: unlocked login keyring
+Sep  6 12:29:41 fedora gdm-password][150929]: gkr-pam: unlocked login keyring
+Sep  6 13:48:51 fedora unix_chkpwd[173515]: password check failed for user (sohil)
+Sep  6 13:48:51 fedora gdm-password][173490]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  6 13:48:51 fedora gdm-password][173490]: gkr-pam: the password for the login keyring was invalid.
+Sep  6 13:48:58 fedora gdm-password][173532]: gkr-pam: unlocked login keyring
+Sep  6 15:29:15 fedora gdm-password][201263]: gkr-pam: unlocked login keyring
+Sep  6 15:46:50 fedora gdm-password][206940]: gkr-pam: unlocked login keyring
+Sep  6 21:10:25 fedora unix_chkpwd[230845]: password check failed for user (sohil)
+Sep  6 21:10:25 fedora gdm-password][230839]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  6 21:10:25 fedora gdm-password][230839]: gkr-pam: the password for the login keyring was invalid.
+Sep  6 21:10:30 fedora gdm-password][230850]: gkr-pam: unlocked login keyring
+Sep  8 09:53:55 fedora gdm-password][270795]: gkr-pam: unlocked login keyring
+Sep  8 10:28:04 fedora gdm-password][283656]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  8 10:28:04 fedora gdm-password][283656]: gkr-pam: the password for the login keyring was invalid.
+Sep  8 10:28:08 fedora gdm-password][284037]: gkr-pam: unlocked login keyring
+Sep  8 10:46:15 fedora sudo[296162]:   sohil : TTY=pts/7 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  8 10:46:15 fedora (systemd)[296176]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 10:46:16 fedora sudo[296162]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 10:46:16 fedora sudo[296162]: pam_unix(sudo:session): session closed for user root
+Sep  8 10:46:19 fedora sudo[296201]:   sohil : TTY=pts/7 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  8 10:46:19 fedora sudo[296201]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 10:46:19 fedora sudo[296201]: pam_unix(sudo:session): session closed for user root
+Sep  8 10:46:23 fedora sudo[296208]:   sohil : TTY=pts/7 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/netstat -tulnp
+Sep  8 10:46:23 fedora sudo[296208]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 10:46:23 fedora sudo[296208]: pam_unix(sudo:session): session closed for user root
+Sep  8 14:00:01 fedora gdm-password][420150]: gkr-pam: unlocked login keyring
+Sep  8 14:12:45 fedora gdm-password][423969]: gkr-pam: unlocked login keyring
+Sep  8 16:28:30 fedora gdm-password][502996]: gkr-pam: unlocked login keyring
+Sep  8 17:07:57 fedora sudo[516277]:   sohil : TTY=pts/8 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep  8 17:07:57 fedora (systemd)[516290]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 17:07:58 fedora sudo[516277]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 17:07:58 fedora su[516312]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:24:59 fedora gdm-password][545496]: gkr-pam: unlocked login keyring
+Sep  8 18:38:03 fedora unix_chkpwd[550608]: password check failed for user (sohil)
+Sep  8 18:38:03 fedora sudo[550578]: pam_unix(sudo:auth): authentication failure; logname=sohil uid=1000 euid=0 tty=/dev/pts/12 ruser=sohil rhost=  user=sohil
+Sep  8 18:38:10 fedora sudo[550578]:   sohil : TTY=pts/12 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/bash deploy_ic.sh
+Sep  8 18:38:10 fedora sudo[550578]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:38:10 fedora sudo[550635]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 18:38:10 fedora sudo[550635]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:10 fedora sudo[550635]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:10 fedora sudo[550650]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 18:38:10 fedora sudo[550650]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:10 fedora sudo[550650]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:10 fedora sudo[550698]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 18:38:10 fedora sudo[550698]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:10 fedora sudo[550698]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:10 fedora sudo[550578]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:28 fedora sudo[550804]:   sohil : TTY=pts/12 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/bash ./deploy_ic.sh
+Sep  8 18:38:28 fedora sudo[550804]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:38:28 fedora sudo[550808]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 18:38:28 fedora sudo[550808]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:28 fedora sudo[550808]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:28 fedora sudo[550821]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 18:38:28 fedora sudo[550821]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:28 fedora sudo[550821]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:28 fedora sudo[550872]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 18:38:28 fedora sudo[550872]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:38:28 fedora sudo[550872]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:38:28 fedora sudo[550804]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:40:28 fedora sudo[551530]:   sohil : TTY=pts/12 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/bash ./deploy_ic.sh
+Sep  8 18:40:28 fedora sudo[551530]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:40:28 fedora sudo[551534]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 18:40:28 fedora sudo[551534]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:40:28 fedora sudo[551534]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:40:28 fedora sudo[551548]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 18:40:28 fedora sudo[551548]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:40:28 fedora sudo[551548]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:40:28 fedora sudo[551598]:    root : TTY=pts/13 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 18:40:28 fedora sudo[551598]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:40:28 fedora sudo[551598]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:40:28 fedora sudo[551530]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:41:16 fedora sudo[552190]:   sohil : TTY=pts/13 ; PWD=/tmp ; USER=root ; COMMAND=./aws/install
+Sep  8 18:41:16 fedora sudo[552190]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:41:19 fedora sudo[552190]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:42:01 fedora sudo[552499]:   sohil : TTY=pts/12 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/bash ./deploy_ic.sh
+Sep  8 18:42:01 fedora sudo[552499]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:42:01 fedora sudo[552503]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 18:42:01 fedora sudo[552503]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:42:01 fedora sudo[552503]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:42:01 fedora sudo[552516]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 18:42:01 fedora sudo[552516]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:42:01 fedora sudo[552516]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:42:01 fedora sudo[552569]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 18:42:01 fedora sudo[552569]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:42:07 fedora sudo[552569]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:42:07 fedora sudo[552605]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 18:42:07 fedora sudo[552605]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:45:51 fedora sudo[552605]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:45:51 fedora sudo[552499]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:45:52 fedora sudo[554346]:   sohil : TTY=pts/12 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/bash ./deploy_ic.sh
+Sep  8 18:45:52 fedora sudo[554346]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 18:45:52 fedora sudo[554350]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 18:45:52 fedora sudo[554350]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:45:52 fedora sudo[554350]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:45:52 fedora sudo[554363]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 18:45:52 fedora sudo[554363]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:45:52 fedora sudo[554363]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:45:52 fedora sudo[554416]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 18:45:52 fedora sudo[554416]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 18:46:00 fedora sudo[554416]: pam_unix(sudo:session): session closed for user root
+Sep  8 18:46:00 fedora sudo[554476]:    root : TTY=pts/14 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 18:46:00 fedora sudo[554476]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 19:00:13 fedora sudo[554346]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:00:13 fedora sudo[554476]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:00:25 fedora su[516312]: pam_unix(su:session): session closed for user root
+Sep  8 19:00:25 fedora gdm-password][3278]: pam_unix(gdm-password:session): session closed for user sohil
+Sep  8 19:00:25 fedora polkitd[1225]: Error converting subject to JS object: Process 4277 terminated
+Sep  8 19:00:27 fedora sudo[516277]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:00:59 fedora (systemd)[1655]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  8 19:00:59 fedora gdm-launch-environment][1617]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  8 19:01:05 fedora gdm-password][3481]: gkr-pam: unable to locate daemon control file
+Sep  8 19:01:05 fedora gdm-password][3481]: gkr-pam: stashed password to try later in open session
+Sep  8 19:01:06 fedora (systemd)[3694]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  8 19:01:06 fedora gdm-password][3481]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  8 19:01:06 fedora gdm-password][3481]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  8 19:01:09 fedora gdm-launch-environment][1617]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  8 19:01:54 fedora sudo[7118]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:01:54 fedora (systemd)[7151]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 19:01:54 fedora sudo[7118]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:01:54 fedora sudo[7118]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:01:54 fedora sudo[7182]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:01:54 fedora sudo[7182]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:01:55 fedora sudo[7182]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:01:55 fedora sudo[7233]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:01:55 fedora sudo[7233]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:02:01 fedora sudo[7233]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:02:01 fedora sudo[7290]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:02:01 fedora sudo[7290]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:12 fedora sudo[7290]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:12 fedora sudo[9368]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker tag 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest ic-cloud-schedule-jobs:latest
+Sep  8 19:05:12 fedora sudo[9368]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:12 fedora sudo[9368]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:12 fedora sudo[9382]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker rmi -f 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:05:12 fedora sudo[9382]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:12 fedora sudo[9382]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:12 fedora sudo[9397]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-backend:latest
+Sep  8 19:05:12 fedora sudo[9397]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:56 fedora sudo[9397]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:58 fedora sudo[9958]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:05:58 fedora sudo[9958]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:58 fedora sudo[9958]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:58 fedora sudo[9973]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:05:58 fedora sudo[9973]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:05:58 fedora sudo[9973]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:05:58 fedora sudo[10022]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:05:58 fedora sudo[10022]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:05 fedora sudo[10022]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:05 fedora sudo[10093]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:06:05 fedora sudo[10093]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:10 fedora sudo[10093]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:10 fedora sudo[10130]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker tag 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest ic-cloud-schedule-jobs:latest
+Sep  8 19:06:10 fedora sudo[10130]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:10 fedora sudo[10130]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:10 fedora sudo[10146]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker rmi -f 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:06:10 fedora sudo[10146]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:10 fedora sudo[10146]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:10 fedora sudo[10160]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-backend:latest
+Sep  8 19:06:11 fedora sudo[10160]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:45 fedora sudo[10160]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:46 fedora sudo[10468]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:06:46 fedora sudo[10468]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:46 fedora sudo[10468]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:46 fedora sudo[10481]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:06:46 fedora sudo[10481]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:46 fedora sudo[10481]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:46 fedora sudo[10532]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:06:46 fedora sudo[10532]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:52 fedora sudo[10532]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:52 fedora sudo[10593]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:06:52 fedora sudo[10593]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:55 fedora sudo[10593]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:55 fedora sudo[10632]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker tag 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest ic-cloud-schedule-jobs:latest
+Sep  8 19:06:55 fedora sudo[10632]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:55 fedora sudo[10632]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:55 fedora sudo[10646]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker rmi -f 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:06:55 fedora sudo[10646]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:06:55 fedora sudo[10646]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:06:55 fedora sudo[10660]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-backend:latest
+Sep  8 19:06:55 fedora sudo[10660]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:38:15 fedora sudo[10660]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:38:21 fedora gdm-password][3481]: pam_unix(gdm-password:session): session closed for user sohil
+Sep  8 19:38:22 fedora polkitd[1234]: Error converting subject to JS object: Process 4534 terminated
+Sep  8 19:38:56 fedora (systemd)[1650]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  8 19:38:56 fedora gdm-launch-environment][1610]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  8 19:39:09 fedora gdm-password][4561]: gkr-pam: unable to locate daemon control file
+Sep  8 19:39:09 fedora gdm-password][4561]: gkr-pam: stashed password to try later in open session
+Sep  8 19:39:09 fedora (systemd)[4620]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  8 19:39:10 fedora gdm-password][4561]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  8 19:39:10 fedora gdm-password][4561]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  8 19:39:12 fedora gdm-launch-environment][1610]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  8 19:39:12 fedora polkitd[1235]: Error converting subject to JS object: Process 2773 terminated
+Sep  8 19:40:49 fedora sudo[7422]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:40:49 fedora (systemd)[7435]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 19:40:49 fedora sudo[7422]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:40:50 fedora sudo[7422]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:40:50 fedora sudo[7465]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:40:50 fedora sudo[7465]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:40:50 fedora sudo[7465]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:40:50 fedora sudo[7534]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:40:50 fedora sudo[7534]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:40:59 fedora sudo[7534]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:40:59 fedora sudo[7572]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:40:59 fedora sudo[7572]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:41:08 fedora sudo[7572]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:41:08 fedora sudo[7629]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker tag 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest ic-cloud-schedule-jobs:latest
+Sep  8 19:41:08 fedora sudo[7629]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:41:08 fedora sudo[7629]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:41:08 fedora sudo[7643]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker rmi -f 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:41:08 fedora sudo[7643]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:41:08 fedora sudo[7643]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:41:08 fedora sudo[7657]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-backend:latest
+Sep  8 19:41:08 fedora sudo[7657]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:41:20 fedora sudo[7657]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:42:20 fedora sudo[8047]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:42:20 fedora (systemd)[8052]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 19:42:21 fedora sudo[8047]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:42:21 fedora sudo[8047]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:42:21 fedora sudo[8101]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:42:21 fedora sudo[8101]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:42:21 fedora sudo[8101]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:42:21 fedora sudo[8151]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:42:21 fedora sudo[8151]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:42:26 fedora sudo[8151]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:42:26 fedora sudo[8187]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:42:26 fedora sudo[8187]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:48:41 fedora sudo[8187]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:53:57 fedora sudo[12442]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 19:53:57 fedora (systemd)[12540]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep  8 19:53:58 fedora sudo[12442]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:53:58 fedora sudo[12442]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:53:58 fedora sudo[12571]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 19:53:58 fedora sudo[12571]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:53:58 fedora sudo[12571]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:53:58 fedora sudo[12625]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 19:53:58 fedora sudo[12625]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 19:54:08 fedora sudo[12625]: pam_unix(sudo:session): session closed for user root
+Sep  8 19:54:08 fedora sudo[12694]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 19:54:08 fedora sudo[12694]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:08:03 fedora gdm-password][19944]: gkr-pam: unlocked login keyring
+Sep  8 20:12:27 fedora sudo[21614]:   sohil : TTY=pts/2 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/su
+Sep  8 20:12:27 fedora sudo[21614]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:12:27 fedora su[21626]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep  8 20:18:35 fedora sudo[12694]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:23:35 fedora sudo[23285]: pam_unix(sudo:auth): conversation failed
+Sep  8 20:23:35 fedora sudo[23285]: pam_unix(sudo:auth): auth could not identify password for [sohil]
+Sep  8 20:32:19 fedora unix_chkpwd[23386]: password check failed for user (sohil)
+Sep  8 20:32:19 fedora gdm-password][23377]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep  8 20:32:19 fedora gdm-password][23377]: gkr-pam: the password for the login keyring was invalid.
+Sep  8 20:32:26 fedora gdm-password][23393]: gkr-pam: unlocked login keyring
+Sep  8 20:32:49 fedora sudo[23467]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker ps
+Sep  8 20:32:49 fedora sudo[23467]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:32:49 fedora sudo[23467]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:32:49 fedora sudo[23485]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker compose --version
+Sep  8 20:32:49 fedora sudo[23485]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:32:50 fedora sudo[23485]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:32:50 fedora sudo[23540]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker login --username AWS --password-stdin 186710877227.dkr.ecr.us-east-1.amazonaws.com
+Sep  8 20:32:50 fedora sudo[23540]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:32:55 fedora sudo[23540]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:32:55 fedora sudo[23556]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 20:32:55 fedora sudo[23556]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:32:59 fedora sudo[23556]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:32:59 fedora sudo[23570]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker tag 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest ic-cloud-schedule-jobs:latest
+Sep  8 20:32:59 fedora sudo[23570]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:32:59 fedora sudo[23570]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:33:00 fedora sudo[23585]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker rmi -f 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-schedule-jobs:latest
+Sep  8 20:33:00 fedora sudo[23585]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 20:33:00 fedora sudo[23585]: pam_unix(sudo:session): session closed for user root
+Sep  8 20:33:00 fedora sudo[23599]:   sohil : TTY=pts/0 ; PWD=/home/sohil/tools/ic-deploy ; USER=root ; COMMAND=/usr/sbin/docker pull 186710877227.dkr.ecr.us-east-1.amazonaws.com/ic-cloud-backend:latest
+Sep  8 20:33:00 fedora sudo[23599]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep  8 21:31:11 fedora gdm-password][38033]: gkr-pam: unlocked login keyring
+Sep  8 22:13:28 fedora gdm-password][54309]: gkr-pam: unlocked login keyring
+Sep  8 22:37:05 fedora gdm-password][60907]: gkr-pam: unlocked login keyring
+Sep  8 22:37:26 fedora sudo[23599]: pam_unix(sudo:session): session closed for user root
+Sep  9 12:09:29 fedora gdm-password][61442]: gkr-pam: unlocked login keyring
+Sep  9 13:28:45 fedora gdm-password][77903]: gkr-pam: unlocked login keyring
+Sep  9 13:30:09 fedora (systemd)[1645]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep  9 13:30:09 fedora gdm-launch-environment][1609]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep  9 13:30:33 fedora gdm-password][4627]: gkr-pam: unable to locate daemon control file
+Sep  9 13:30:33 fedora gdm-password][4627]: gkr-pam: stashed password to try later in open session
+Sep  9 13:30:33 fedora (systemd)[4681]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  9 13:30:34 fedora gdm-password][4627]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep  9 13:30:34 fedora gdm-password][4627]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep  9 13:30:36 fedora gdm-launch-environment][1609]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep  9 13:30:36 fedora polkitd[1228]: Error converting subject to JS object: Process 2361 terminated
+Sep  9 16:14:41 fedora gdm-password][57567]: gkr-pam: unlocked login keyring
+Sep  9 16:36:04 fedora gdm-password][63405]: gkr-pam: unlocked login keyring
+Sep  9 17:12:44 fedora gdm-password][74350]: gkr-pam: unlocked login keyring
+Sep  9 18:07:09 fedora gdm-password][89104]: gkr-pam: unlocked login keyring
+Sep  9 18:27:04 fedora gdm-password][94438]: gkr-pam: unlocked login keyring
+Sep 10 10:08:32 fedora gdm-password][103029]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep 10 10:08:32 fedora gdm-password][103029]: gkr-pam: the password for the login keyring was invalid.
+Sep 10 10:08:36 fedora gdm-password][103328]: gkr-pam: unlocked login keyring
+Sep 10 17:48:49 fedora gdm-password][161136]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep 10 17:48:49 fedora gdm-password][161136]: gkr-pam: the password for the login keyring was invalid.
+Sep 10 17:50:59 fedora gdm-password][161453]: gkr-pam: unlocked login keyring
+Sep 10 18:23:08 fedora unix_chkpwd[170820]: password check failed for user (sohil)
+Sep 10 18:23:08 fedora gdm-password][170808]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep 10 18:23:08 fedora gdm-password][170808]: gkr-pam: the password for the login keyring was invalid.
+Sep 10 18:23:14 fedora gdm-password][170862]: gkr-pam: unlocked login keyring
+Sep 10 19:19:45 fedora gdm-password][188403]: gkr-pam: unlocked login keyring
+Sep 10 19:25:01 fedora gdm-password][189854]: gkr-pam: unlocked login keyring
+Sep 11 01:26:25 fedora gdm-password][191082]: gkr-pam: unlocked login keyring
+Sep 11 10:04:01 fedora gdm-password][209542]: gkr-pam: unlocked login keyring
+Sep 11 11:09:28 fedora sudo[231691]:   sohil : TTY=pts/4 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/systemctl status opensearch
+Sep 11 11:09:28 fedora (systemd)[231707]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep 11 11:09:28 fedora sudo[231691]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep 11 11:09:31 fedora sudo[231691]: pam_unix(sudo:session): session closed for user root
+Sep 11 11:09:35 fedora sudo[231770]:   sohil : TTY=pts/4 ; PWD=/home/sohil/Desktop/launcher-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep 11 11:09:35 fedora sudo[231770]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep 11 11:09:35 fedora su[231773]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep 11 11:15:56 fedora sudo[234204]:    root : TTY=pts/5 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/systemctl restart opensearch-dashboards.service
+Sep 11 11:15:56 fedora sudo[234204]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep 11 11:15:57 fedora sudo[234204]: pam_unix(sudo:session): session closed for user root
+Sep 11 11:16:04 fedora sudo[234340]:    root : TTY=pts/5 ; PWD=/etc/opensearch-dashboards ; USER=root ; COMMAND=/usr/sbin/systemctl status opensearch-dashboards.service
+Sep 11 11:16:04 fedora sudo[234340]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep 11 11:16:05 fedora sudo[234340]: pam_unix(sudo:session): session closed for user root
+Sep 11 11:37:19 fedora gdm-password][241142]: gkr-pam: unlocked login keyring
+Sep 11 12:01:28 fedora gdm-password][247235]: gkr-pam: unlocked login keyring
+Sep 11 12:17:46 fedora gdm-password][251186]: gkr-pam: unlocked login keyring
+Sep 11 12:35:37 fedora gdm-password][255503]: gkr-pam: unlocked login keyring
+Sep 11 12:43:58 fedora gdm-password][257554]: gkr-pam: unlocked login keyring
+Sep 11 13:31:47 fedora gdm-password][262349]: gkr-pam: unlocked login keyring
+Sep 11 14:11:08 fedora gdm-password][271833]: gkr-pam: unlocked login keyring
+Sep 11 14:18:05 fedora gdm-password][273543]: gkr-pam: unlocked login keyring
+Sep 11 14:27:17 fedora su[231773]: pam_unix(su:session): session closed for user root
+Sep 11 14:27:17 fedora sudo[231770]: pam_unix(sudo:session): session closed for user root
+Sep 11 14:56:06 fedora gdm-password][284178]: gkr-pam: unlocked login keyring
+Sep 11 15:05:17 fedora gdm-password][286527]: gkr-pam: unlocked login keyring
+Sep 11 15:54:06 fedora gdm-password][298640]: pam_unix(gdm-password:auth): authentication failure; logname=sohil uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=sohil
+Sep 11 15:54:06 fedora gdm-password][298640]: gkr-pam: the password for the login keyring was invalid.
+Sep 11 15:54:12 fedora gdm-password][299077]: gkr-pam: unlocked login keyring
+Sep 11 16:19:01 fedora gdm-password][305485]: gkr-pam: unlocked login keyring
+Sep 11 16:48:52 fedora sudo[314930]:   sohil : TTY=pts/4 ; PWD=/home/sohil/Desktop/tmp/idb-next ; USER=root ; COMMAND=/usr/sbin/su
+Sep 11 16:48:53 fedora (systemd)[314946]: pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+Sep 11 16:48:53 fedora sudo[314930]: pam_unix(sudo:session): session opened for user root(uid=0) by sohil(uid=1000)
+Sep 11 16:48:53 fedora su[314967]: pam_unix(su:session): session opened for user root(uid=0) by sohil(uid=0)
+Sep 11 21:26:58 fedora gdm-password][335084]: gkr-pam: unlocked login keyring
+Sep 11 21:55:00 fedora (systemd)[1658]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep 11 21:55:00 fedora gdm-launch-environment][1613]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep 11 21:55:23 fedora gdm-password][4714]: gkr-pam: unable to locate daemon control file
+Sep 11 21:55:23 fedora gdm-password][4714]: gkr-pam: stashed password to try later in open session
+Sep 11 21:55:23 fedora (systemd)[4749]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep 11 21:55:23 fedora gdm-password][4714]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep 11 21:55:23 fedora gdm-password][4714]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep 11 21:55:26 fedora gdm-launch-environment][1613]: pam_unix(gdm-launch-environment:session): session closed for user gdm
+Sep 11 21:55:26 fedora polkitd[1230]: Error converting subject to JS object: Process 2297 terminated
+Sep 11 22:01:40 fedora (systemd)[1657]: pam_unix(systemd-user:session): session opened for user gdm(uid=42) by gdm(uid=0)
+Sep 11 22:01:40 fedora gdm-launch-environment][1603]: pam_unix(gdm-launch-environment:session): session opened for user gdm(uid=42) by (uid=0)
+Sep 12 09:56:33 fedora gdm-password][4693]: gkr-pam: unable to locate daemon control file
+Sep 12 09:56:33 fedora gdm-password][4693]: gkr-pam: stashed password to try later in open session
+Sep 12 09:56:33 fedora (systemd)[4709]: pam_unix(systemd-user:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep 12 09:56:33 fedora gdm-password][4693]: pam_unix(gdm-password:session): session opened for user sohil(uid=1000) by sohil(uid=0)
+Sep 12 09:56:33 fedora gdm-password][4693]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+Sep 12 09:56:39 fedora polkitd[1235]: Error converting subject to JS object: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: The connection does not exist
+Sep 12 09:56:39 fedora gdm-launch-environment][1603]: pam_unix(gdm-launch-environment:session): session closed for user gdm

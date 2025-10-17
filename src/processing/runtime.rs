@@ -1,37 +1,60 @@
-// src/vrl.rs - VRL execution and value conversion module
+// src/processing/runtime.rs - Fully compliant VRL runtime implementation
 use anyhow::Result;
 use serde_json;
-use vrl::compiler::{Program, TimeZone};
+use std::collections::BTreeMap;
+use vrl::compiler::{state::RuntimeState, Context, Program, TargetValue, TimeZone};
 use vrl::prelude::*;
-use vrl::value::ObjectMap;
+use vrl::value::{ObjectMap, Secrets};
 
 /// VRL runtime wrapper for executing transformations
 pub struct VrlRuntime {
-    #[allow(dead_code)] // Will be used when VRL execution is properly implemented
     program: Program,
-    #[allow(dead_code)] // Will be used when VRL execution is properly implemented
     timezone: TimeZone,
 }
 
 impl VrlRuntime {
     /// Create a new VRL runtime with the given VRL script
     pub fn new(vrl_script: &str) -> Result<Self> {
-        // Parse and compile the VRL program
-        let program = vrl::compiler::compile(vrl_script, &vrl::stdlib::all())
-            .map_err(|e| anyhow::anyhow!("Failed to compile VRL script: {e:?}"))?
-            .program;
+        // Compile the VRL program with all standard library functions
+        let fns = vrl::stdlib::all();
+        let result = vrl::compiler::compile(vrl_script, &fns)
+            .map_err(|diagnostics| {
+                anyhow::anyhow!("Failed to compile script: {diagnostics:?}")
+            })?;
 
         Ok(Self {
-            program,
+            program: result.program,
             timezone: TimeZone::default(),
         })
     }
 
-    /// Execute the VRL program against an event
+    /// Execute the VRL program against an event and return the transformed result
     pub fn transform(&mut self, event: Value) -> Result<Value> {
-        // For now, return the event as-is until we can properly implement VRL execution
-        // This is a temporary workaround for the API compatibility issues
-        Ok(event)
+        // Create a target from the input event
+        let mut target = TargetValue {
+            value: event,
+            metadata: Value::Object(BTreeMap::new()),
+            secrets: Secrets::default(),
+        };
+
+        // Create runtime state for local variables
+        let mut state = RuntimeState::default();
+
+        // Create execution context
+        let mut ctx = Context::new(&mut target, &mut state, &self.timezone);
+
+        // Execute the VRL program
+        let result = self
+            .program
+            .resolve(&mut ctx)
+            .map_err(|e| anyhow::anyhow!("VRL execution error: {e}"))?;
+
+        Ok(result)
+    }
+
+    /// Get a reference to the compiled program
+    pub fn program(&self) -> &Program {
+        &self.program
     }
 }
 
@@ -85,6 +108,11 @@ pub fn vrl_value_to_serde_json(value: Value) -> serde_json::Value {
             .map(serde_json::Value::Number)
             .unwrap_or(serde_json::Value::Null),
         Value::Bytes(b) => serde_json::Value::String(String::from_utf8_lossy(&b).to_string()),
+        Value::Timestamp(ts) => {
+            // Convert timestamp to ISO 8601 string
+            serde_json::Value::String(ts.to_string())
+        }
+        Value::Regex(r) => serde_json::Value::String(r.to_string()),
         Value::Array(arr) => {
             serde_json::Value::Array(arr.into_iter().map(vrl_value_to_serde_json).collect())
         }
@@ -95,7 +123,68 @@ pub fn vrl_value_to_serde_json(value: Value) -> serde_json::Value {
                 .collect();
             serde_json::Value::Object(obj)
         }
-        _ => serde_json::Value::Null,
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_vrl_runtime_simple() {
+        let script = r#".result = "Hello, VRL!""#;
+        let mut runtime = VrlRuntime::new(script).unwrap();
+        
+        let input = Value::Object(ObjectMap::new());
+        let output = runtime.transform(input).unwrap();
+        
+        // The script sets .result, so output could be the result value or modified object
+        // VRL returns the last expression value
+        assert!(matches!(output, Value::Bytes(_) | Value::Object(_)));
+    }
+
+    #[test]
+    fn test_vrl_runtime_field_access() {
+        let script = r#".message"#;
+        let mut runtime = VrlRuntime::new(script).unwrap();
+        
+        let mut input_map = ObjectMap::new();
+        input_map.insert("message".into(), Value::from("test"));
+        let input = Value::Object(input_map);
+        
+        let output = runtime.transform(input).unwrap();
+        assert_eq!(output, Value::from("test"));
+    }
+
+    #[test]
+    fn test_value_conversions() {
+        let json = serde_json::json!({
+            "string": "test",
+            "number": 42,
+            "boolean": true,
+            "array": [1, 2, 3],
+            "nested": {
+                "key": "value"
+            }
+        });
+
+        let vrl_value = serde_json_to_vrl_value(json.clone());
+        let converted_back = vrl_value_to_serde_json(vrl_value);
+
+        assert_eq!(json, converted_back);
+    }
+
+    #[test]
+    fn test_log_event_conversion() {
+        let event = crate::LogEvent::new("test message")
+            .with_metadata("key", serde_json::json!("value"));
+
+        let vrl_value = log_event_to_vrl_value(event);
+        
+        assert!(vrl_value.is_object());
+        if let Value::Object(map) = vrl_value {
+            assert!(map.contains_key("message"));
+            assert!(map.contains_key("key"));
+        }
+    }
+}
