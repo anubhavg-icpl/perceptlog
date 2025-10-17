@@ -244,7 +244,6 @@ impl VectorConfig {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::fs;
     use std::io::Write;
     use tempfile::NamedTempFile;
 
@@ -269,7 +268,7 @@ mod tests {
             metrics_port = 8080
         "#;
 
-        let mut temp_file = NamedTempFile::new().unwrap();
+        let mut temp_file = NamedTempFile::with_suffix(".toml").unwrap();
         write!(temp_file, "{}", toml_content).unwrap();
         temp_file.flush().unwrap();
 
