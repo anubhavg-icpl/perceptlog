@@ -4,6 +4,7 @@ use crate::{
     error::TransformError, vrl_value_to_serde_json,
 };
 use anyhow::{Context, Result};
+use futures::StreamExt;
 use serde_json::Value as JsonValue;
 use std::fs;
 use std::path::Path;
@@ -160,23 +161,22 @@ impl OcsfTransformer {
 
         let transformer = self.clone();
 
-        Ok(stream
-            .map(move |line_result| {
-                let transformer = transformer.clone();
-                async move {
-                    match line_result {
-                        Ok(line) => {
-                            if line.trim().is_empty() {
-                                Err(TransformError::ParseError("Empty line".to_string()))
-                            } else {
-                                transformer.transform_line(&line).await
-                            }
+        Ok(futures::StreamExt::map(stream, move |line_result| {
+            let transformer = transformer.clone();
+            async move {
+                match line_result {
+                    Ok(line) => {
+                        if line.trim().is_empty() {
+                            Err(TransformError::ParseError("Empty line".to_string()))
+                        } else {
+                            transformer.transform_line(&line).await
                         }
-                        Err(e) => Err(TransformError::IoError(e.to_string())),
                     }
+                    Err(e) => Err(TransformError::IoError(e.to_string())),
                 }
-            })
-            .buffered(self.config.batch_size))
+            }
+        })
+        .buffered(self.config.batch_size))
     }
 
     /// Reload VRL script (useful for hot-reloading)

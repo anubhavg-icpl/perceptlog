@@ -135,7 +135,7 @@ impl TransformerConfig {
 }
 
 /// Output format for transformed events
-#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, clap::ValueEnum)]
 #[serde(rename_all = "lowercase")]
 pub enum OutputFormat {
     Json,

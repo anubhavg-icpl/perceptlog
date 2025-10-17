@@ -1,14 +1,13 @@
 // src/main.rs - CLI application
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
+use perceptlog::{
+    OcsfEvent, OcsfTransformer, TransformResult, TransformerConfig, config::OutputFormat,
+};
 use std::path::PathBuf;
 use tokio::fs;
 use tracing::{error, info, warn};
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
-use vrl_ocsf_transformer::{
-    OcsfTransformer,
-    config::{OutputFormat, TransformerConfig},
-};
 
 #[derive(Parser)]
 #[command(
@@ -287,7 +286,7 @@ async fn process_directory(
 }
 
 async fn write_events(
-    events: &[vrl_ocsf_transformer::OcsfEvent],
+    events: &[perceptlog::OcsfEvent],
     output_file: &PathBuf,
     format: OutputFormat,
     pretty: bool,
@@ -333,7 +332,7 @@ async fn convert_command(vector_config: PathBuf, output: Option<PathBuf>) -> Res
     info!("Converting Vector config: {}", vector_config.display());
 
     let content = fs::read_to_string(&vector_config).await?;
-    let vector_cfg = vrl_ocsf_transformer::config::VectorConfig::from_toml(&content)?;
+    let vector_cfg = perceptlog::config::VectorConfig::from_toml(&content)?;
     let transformer_cfg = vector_cfg.to_transformer_config();
 
     let toml_output = toml::to_string_pretty(&transformer_cfg)?;
@@ -354,7 +353,7 @@ async fn run_command(config_path: PathBuf) -> Result<()> {
     let config = TransformerConfig::from_file(&config_path)?;
     config
         .validate()
-        .context("Configuration validation failed")?;
+        .map_err(|e| anyhow::anyhow!("Configuration validation failed: {}", e))?;
 
     let transformer = OcsfTransformer::with_config(config.clone()).await?;
 
@@ -394,7 +393,7 @@ async fn watch_command(
     output: PathBuf,
     interval: u64,
 ) -> Result<()> {
-    use vrl_ocsf_transformer::watcher::FileWatcher;
+    use perceptlog::watcher::FileWatcher;
 
     info!("Starting watch mode");
     info!("Watching: {}", input.display());
@@ -410,10 +409,12 @@ async fn watch_command(
 
 #[cfg(feature = "metrics-support")]
 async fn metrics_command(port: u16) -> Result<()> {
-    use vrl_ocsf_transformer::metrics::start_metrics_server;
+    use perceptlog::metrics::start_metrics_server;
 
     info!("Starting metrics server on port {}", port);
-    start_metrics_server(port).await?;
+    start_metrics_server(port)
+        .await
+        .map_err(|e| anyhow::anyhow!("Metrics server error: {}", e))?;
 
     Ok(())
 }
