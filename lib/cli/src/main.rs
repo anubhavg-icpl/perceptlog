@@ -1,6 +1,6 @@
 use clap::Parser;
-use vrl::cli::{cmd::cmd, Opts};
+use perceptlog::cli::{cmd::cmd, Opts};
 
 fn main() {
-    std::process::exit(cmd(&Opts::parse(), vrl::stdlib::all()));
+    std::process::exit(cmd(&Opts::parse(), perceptlog::stdlib::all()));
 }

@@ -2387,6 +2387,148 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 
 [[package]]
+name = "perceptlog"
+version = "0.27.0"
+dependencies = [
+ "aes",
+ "aes-siv",
+ "ansi_term",
+ "anyhow",
+ "arbitrary",
+ "base16",
+ "base62",
+ "base64-simd",
+ "bytes",
+ "cbc",
+ "cfb-mode",
+ "cfg-if",
+ "chacha20poly1305",
+ "charset",
+ "chrono",
+ "chrono-tz",
+ "ciborium",
+ "cidr",
+ "clap",
+ "codespan-reporting",
+ "community-id",
+ "convert_case",
+ "crc",
+ "criterion",
+ "crypto_secretbox",
+ "csv",
+ "ctr",
+ "digest",
+ "dns-lookup",
+ "domain",
+ "dyn-clone",
+ "encoding_rs",
+ "exitcode",
+ "fancy-regex",
+ "flate2",
+ "grok",
+ "hex",
+ "hmac",
+ "hostname",
+ "iana-time-zone",
+ "idna",
+ "indexmap",
+ "indoc",
+ "influxdb-line-protocol",
+ "ipcrypt-rs",
+ "itertools 0.14.0",
+ "jsonschema",
+ "lalrpop",
+ "lalrpop-util",
+ "lz4_flex",
+ "md-5",
+ "mlua",
+ "nom 8.0.0",
+ "nom-language",
+ "ofb",
+ "onig",
+ "ordered-float",
+ "parse-size",
+ "paste",
+ "peeking_take_while",
+ "percent-encoding",
+ "pest",
+ "pest_derive",
+ "prettydiff",
+ "prettytable-rs",
+ "proptest",
+ "proptest-derive",
+ "prost",
+ "prost-reflect",
+ "psl",
+ "psl-types",
+ "publicsuffix",
+ "quickcheck",
+ "quoted_printable",
+ "rand 0.8.5",
+ "regex",
+ "reqwest",
+ "reqwest-middleware",
+ "reqwest-retry",
+ "roxmltree",
+ "rust_decimal",
+ "rustyline",
+ "seahash",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "sha-1",
+ "sha2",
+ "sha3",
+ "simdutf8",
+ "snafu 0.8.9",
+ "snap",
+ "strip-ansi-escapes",
+ "syslog_loose",
+ "termcolor",
+ "thiserror 2.0.17",
+ "tokio",
+ "tracing",
+ "tracing-test",
+ "ua-parser",
+ "unicode-segmentation",
+ "url",
+ "utf8-width",
+ "uuid",
+ "webbrowser",
+ "woothee",
+ "xxhash-rust",
+ "zstd",
+]
+
+[[package]]
+name = "perceptlog-cli"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "perceptlog",
+]
+
+[[package]]
+name = "perceptlog-fuzz"
+version = "0.1.0"
+dependencies = [
+ "afl",
+ "perceptlog",
+]
+
+[[package]]
+name = "perceptlog-tests"
+version = "0.1.0"
+dependencies = [
+ "chrono-tz",
+ "clap",
+ "glob",
+ "perceptlog",
+ "tikv-jemallocator",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "pest"
 version = "2.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4105,148 +4247,6 @@ name = "version_check"
 version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
-
-[[package]]
-name = "vrl"
-version = "0.27.0"
-dependencies = [
- "aes",
- "aes-siv",
- "ansi_term",
- "anyhow",
- "arbitrary",
- "base16",
- "base62",
- "base64-simd",
- "bytes",
- "cbc",
- "cfb-mode",
- "cfg-if",
- "chacha20poly1305",
- "charset",
- "chrono",
- "chrono-tz",
- "ciborium",
- "cidr",
- "clap",
- "codespan-reporting",
- "community-id",
- "convert_case",
- "crc",
- "criterion",
- "crypto_secretbox",
- "csv",
- "ctr",
- "digest",
- "dns-lookup",
- "domain",
- "dyn-clone",
- "encoding_rs",
- "exitcode",
- "fancy-regex",
- "flate2",
- "grok",
- "hex",
- "hmac",
- "hostname",
- "iana-time-zone",
- "idna",
- "indexmap",
- "indoc",
- "influxdb-line-protocol",
- "ipcrypt-rs",
- "itertools 0.14.0",
- "jsonschema",
- "lalrpop",
- "lalrpop-util",
- "lz4_flex",
- "md-5",
- "mlua",
- "nom 8.0.0",
- "nom-language",
- "ofb",
- "onig",
- "ordered-float",
- "parse-size",
- "paste",
- "peeking_take_while",
- "percent-encoding",
- "pest",
- "pest_derive",
- "prettydiff",
- "prettytable-rs",
- "proptest",
- "proptest-derive",
- "prost",
- "prost-reflect",
- "psl",
- "psl-types",
- "publicsuffix",
- "quickcheck",
- "quoted_printable",
- "rand 0.8.5",
- "regex",
- "reqwest",
- "reqwest-middleware",
- "reqwest-retry",
- "roxmltree",
- "rust_decimal",
- "rustyline",
- "seahash",
- "serde",
- "serde_json",
- "serde_yaml",
- "sha-1",
- "sha2",
- "sha3",
- "simdutf8",
- "snafu 0.8.9",
- "snap",
- "strip-ansi-escapes",
- "syslog_loose",
- "termcolor",
- "thiserror 2.0.17",
- "tokio",
- "tracing",
- "tracing-test",
- "ua-parser",
- "unicode-segmentation",
- "url",
- "utf8-width",
- "uuid",
- "webbrowser",
- "woothee",
- "xxhash-rust",
- "zstd",
-]
-
-[[package]]
-name = "vrl-cli"
-version = "0.1.0"
-dependencies = [
- "clap",
- "vrl",
-]
-
-[[package]]
-name = "vrl-fuzz"
-version = "0.1.0"
-dependencies = [
- "afl",
- "vrl",
-]
-
-[[package]]
-name = "vrl-tests"
-version = "0.1.0"
-dependencies = [
- "chrono-tz",
- "clap",
- "glob",
- "tikv-jemallocator",
- "tracing-subscriber",
- "vrl",
-]
 
 [[package]]
 name = "vsimd"

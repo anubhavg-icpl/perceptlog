@@ -3,13 +3,13 @@ extern crate afl;
 
 use std::collections::BTreeMap;
 
-use vrl::compiler::state::RuntimeState;
-use vrl::compiler::{CompileConfig, TargetValue};
-use vrl::prelude::state::ExternalEnv;
-use vrl::prelude::*;
-use vrl::value;
-use vrl::value::Kind;
-use vrl::value::Secrets;
+use perceptlog::compiler::state::RuntimeState;
+use perceptlog::compiler::{CompileConfig, TargetValue};
+use perceptlog::prelude::state::ExternalEnv;
+use perceptlog::prelude::*;
+use perceptlog::value;
+use perceptlog::value::Kind;
+use perceptlog::value::Secrets;
 
 fn main() {
     fuzz!(|data: &[u8]| {
@@ -28,12 +28,12 @@ fn main() {
 }
 
 fn fuzz(src: &str) {
-    let fns = vrl::stdlib::all();
+    let fns = perceptlog::stdlib::all();
     let external = ExternalEnv::new_with_kind(Kind::any_object(), Kind::any_object());
 
     let config = CompileConfig::default();
 
-    if let Ok(result) = vrl::compiler::compile_with_external(src, &fns, &external, config) {
+    if let Ok(result) = perceptlog::compiler::compile_with_external(src, &fns, &external, config) {
         let mut target = TargetValue {
             value: value!({}),
             metadata: Value::Object(BTreeMap::new()),

@@ -22,7 +22,7 @@ private = { ignore = true }
 exceptions = [
   # MPL-2.0 are added case-by-case to make sure we are in compliance. To be in
   # compliance we cannot be modifying the source files.
-  { allow = ["MPL-2.0"], name = "vrl", version = "*" },
+  { allow = ["MPL-2.0"], name = "perceptlog", version = "*" },
 ]
 
 [[licenses.clarify]]

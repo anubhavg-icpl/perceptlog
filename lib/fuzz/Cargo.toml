@@ -1,5 +1,5 @@
 [package]
-name = "vrl-fuzz"
+name = "perceptlog-fuzz"
 version = "0.1.0"
 authors = ["Vector Contributors <vector@datadoghq.com>"]
 edition = "2021"
@@ -12,4 +12,4 @@ path = "src/main.rs"
 
 [dependencies]
 afl = "0.15.23"
-vrl = { path = "../../" }
+perceptlog = { path = "../../" }

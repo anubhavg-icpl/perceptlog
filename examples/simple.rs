@@ -1,5 +1,5 @@
 use std::collections::BTreeMap;
-use vrl::{
+use perceptlog::{
     compiler::{Context, TargetValue, TimeZone, state::RuntimeState},
     value,
     value::{Secrets, Value},
@@ -10,10 +10,10 @@ fn main() {
     let src = ".x";
 
     // Use all of the std library functions
-    let fns = vrl::stdlib::all();
+    let fns = perceptlog::stdlib::all();
 
     // Compile the program (and panic if it's invalid)
-    let result = vrl::compiler::compile(src, &fns).unwrap();
+    let result = perceptlog::compiler::compile(src, &fns).unwrap();
 
     // This is the target that can be accessed / modified in the VRL program.
     // You can use any custom type that implements `Target`, but `TargetValue` is also provided for convenience.

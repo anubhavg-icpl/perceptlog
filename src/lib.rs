@@ -37,7 +37,7 @@ pub mod test;
 #[cfg(feature = "parsing")]
 pub mod parsing;
 
-mod datadog;
+pub mod datadog;
 
 #[cfg(feature = "datadog_filter")]
 pub use datadog::filter as datadog_filter;

@@ -2,8 +2,8 @@ use chrono_tz::Tz;
 use clap::Parser;
 use glob::glob;
 
-use vrl::compiler::{CompileConfig, TimeZone, VrlRuntime};
-use vrl::test::{get_tests_from_functions, run_tests, test_dir, Test, TestConfig};
+use perceptlog::compiler::{CompileConfig, TimeZone, VrlRuntime};
+use perceptlog::test::{get_tests_from_functions, run_tests, test_dir, Test, TestConfig};
 
 #[cfg(not(target_env = "msvc"))]
 #[global_allocator]
@@ -82,7 +82,7 @@ fn main() {
     run_tests(
         tests,
         &cfg,
-        &vrl::stdlib::all(),
+        &perceptlog::stdlib::all(),
         || (CompileConfig::default(), ()),
         |_| {},
     );
@@ -99,7 +99,7 @@ fn get_tests(cmd: &Cmd) -> Vec<Test> {
             let path = entry.ok()?;
             Some(Test::from_path(&path))
         })
-        .chain(get_tests_from_functions(vrl::stdlib::all()))
+        .chain(get_tests_from_functions(perceptlog::stdlib::all()))
         .filter(|test| should_run(&format!("{}/{}", test.category, test.name), &cmd.pattern))
         .collect::<Vec<_>>()
 }
