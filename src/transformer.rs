@@ -1,7 +1,10 @@
 // src/transformer.rs - Core transformation logic
 use crate::{
-    LogEvent, OcsfEvent, TransformResult, VrlRuntime, config::TransformerConfig,
-    error::TransformError, vrl_value_to_serde_json,
+    LogEvent, TransformResult,
+    config::TransformerConfig,
+    error::TransformError,
+    ocsf::OcsfEvent,
+    vrl::{VrlRuntime, log_event_to_vrl_value, vrl_value_to_serde_json},
 };
 use futures::StreamExt;
 use std::fs;
@@ -9,7 +12,6 @@ use std::path::Path;
 use std::sync::Arc;
 use tokio::sync::RwLock;
 use tracing::{debug, info, warn};
-use vrl::prelude::Value;
 
 /// Main transformer struct that handles log to OCSF transformation
 pub struct OcsfTransformer {
@@ -74,7 +76,7 @@ impl OcsfTransformer {
         debug!("Transforming event: {:?}", event.message);
 
         // Convert LogEvent to VRL Value
-        let vrl_value = Value::from(event);
+        let vrl_value = log_event_to_vrl_value(event);
 
         // Execute VRL transformation
         let mut runtime = self.runtime.write().await;
@@ -230,10 +232,10 @@ mod tests {
         let vrl_script = r#". = ."#;
 
         let result = OcsfTransformer::with_script(vrl_script.to_string()).await;
-        
+
         // Test that the transformer can be created successfully
         assert!(result.is_ok());
-        
+
         // Test VRL script validation
         let validation_result = OcsfTransformer::validate_script(vrl_script);
         assert!(validation_result.is_ok());
@@ -257,11 +259,11 @@ mod tests {
         vrl_file.flush().unwrap();
 
         let transformer = OcsfTransformer::new(vrl_file.path()).await.unwrap();
-        
+
         // Test that the transformer can read the file (even if transformation fails)
         // Since our VRL runtime doesn't execute properly yet, we just test file reading
         let _result = transformer.process_file(temp_file.path()).await;
-        
+
         // The result might fail due to VRL execution issues, but the transformer should be created
         // This tests the file reading and basic setup functionality
         assert!(transformer.vrl_script.contains(". = ."));

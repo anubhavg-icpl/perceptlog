@@ -1,10 +1,12 @@
 // src/main.rs - CLI application
 use anyhow::Result;
 use clap::{Parser, Subcommand};
-use perceptlog::{OcsfTransformer, TransformerConfig, config::OutputFormat};
-use std::path::{Path, PathBuf};
-use tokio::fs;
-use tracing::{error, info};
+use perceptlog::{
+    TransformerConfig,
+    commands::{ConvertCommand, RunCommand, TransformCommand, ValidateCommand},
+    config::OutputFormat,
+};
+use std::path::PathBuf;
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
 
 #[derive(Parser)]
@@ -135,7 +137,7 @@ async fn main() -> Result<()> {
             skip_errors,
             batch_size,
         } => {
-            transform_command(
+            TransformCommand::execute(
                 vrl_script,
                 input,
                 output,
@@ -154,265 +156,33 @@ async fn main() -> Result<()> {
             output,
             interval,
         } => {
-            watch_command(vrl_script, input, output, interval).await?;
+            use perceptlog::commands::WatchCommand;
+            WatchCommand::execute(vrl_script, input, output, interval).await?;
         }
 
         Commands::Validate { vrl_script } => {
-            validate_command(vrl_script).await?;
+            ValidateCommand::execute(vrl_script).await?;
         }
 
         Commands::Convert {
             vector_config,
             output,
         } => {
-            convert_command(vector_config, output).await?;
+            ConvertCommand::execute(vector_config, output).await?;
         }
 
         Commands::Run {
             config: config_path,
         } => {
-            run_command(config_path).await?;
+            RunCommand::execute(config_path).await?;
         }
 
         #[cfg(feature = "metrics-support")]
         Commands::Metrics { port } => {
-            metrics_command(port).await?;
+            use perceptlog::commands::MetricsCommand;
+            MetricsCommand::execute(port).await?;
         }
     }
-
-    Ok(())
-}
-
-async fn transform_command(
-    vrl_script: PathBuf,
-    input: PathBuf,
-    output: PathBuf,
-    format: OutputFormat,
-    pretty: bool,
-    skip_errors: bool,
-    _batch_size: usize,
-) -> Result<()> {
-    info!("Starting transformation process");
-    info!("VRL Script: {}", vrl_script.display());
-    info!("Input: {}", input.display());
-    info!("Output: {}", output.display());
-    info!("Format: {:?}", format);
-
-    // Create output directory if it doesn't exist
-    fs::create_dir_all(&output).await?;
-
-    // Create transformer
-    let transformer = OcsfTransformer::new(&vrl_script).await?;
-
-    // Process files based on input type
-    if input.is_file() {
-        process_single_file(&transformer, &input, &output, format, pretty).await?;
-    } else if input.is_dir() {
-        process_directory(&transformer, &input, &output, format, pretty, skip_errors).await?;
-    } else {
-        return Err(anyhow::anyhow!(
-            "Input path does not exist: {}",
-            input.display()
-        ));
-    }
-
-    info!("Transformation completed successfully");
-    Ok(())
-}
-
-async fn process_single_file(
-    transformer: &OcsfTransformer,
-    input: &Path,
-    output_dir: &Path,
-    format: OutputFormat,
-    pretty: bool,
-) -> Result<()> {
-    info!("Processing file: {}", input.display());
-
-    let events = transformer.process_file(input).await?;
-    let output_file = output_dir.join(format!(
-        "{}.{}",
-        input.file_stem().unwrap().to_string_lossy(),
-        format.extension()
-    ));
-
-    write_events(&events, &output_file, format, pretty).await?;
-    info!("Wrote {} events to {}", events.len(), output_file.display());
-
-    Ok(())
-}
-
-async fn process_directory(
-    transformer: &OcsfTransformer,
-    input_dir: &Path,
-    output_dir: &Path,
-    format: OutputFormat,
-    pretty: bool,
-    skip_errors: bool,
-) -> Result<()> {
-    info!("Processing directory: {}", input_dir.display());
-
-    let mut entries = fs::read_dir(input_dir).await?;
-    let _total_events = 0;
-    let mut processed_files = 0;
-    let mut failed_files = 0;
-
-    while let Some(entry) = entries.next_entry().await? {
-        let path = entry.path();
-        if path.is_file() && path.extension().is_some_and(|e| e == "log") {
-            match process_single_file(transformer, &path, output_dir, format, pretty).await {
-                Ok(_) => {
-                    processed_files += 1;
-                }
-                Err(e) => {
-                    error!("Failed to process {}: {}", path.display(), e);
-                    failed_files += 1;
-                    if !skip_errors {
-                        return Err(e);
-                    }
-                }
-            }
-        }
-    }
-
-    info!(
-        "Processed {} files successfully, {} failed",
-        processed_files, failed_files
-    );
-
-    Ok(())
-}
-
-async fn write_events(
-    events: &[perceptlog::OcsfEvent],
-    output_file: &Path,
-    format: OutputFormat,
-    pretty: bool,
-) -> Result<()> {
-    let content = match format {
-        OutputFormat::Json | OutputFormat::JsonPretty => {
-            if pretty || format == OutputFormat::JsonPretty {
-                serde_json::to_string_pretty(events)?
-            } else {
-                serde_json::to_string(events)?
-            }
-        }
-        OutputFormat::Ndjson => events
-            .iter()
-            .map(serde_json::to_string)
-            .collect::<Result<Vec<_>, _>>()?
-            .join("\n"),
-        OutputFormat::Yaml => serde_yaml::to_string(events)?,
-    };
-
-    fs::write(output_file, content).await?;
-    Ok(())
-}
-
-async fn validate_command(vrl_script: PathBuf) -> Result<()> {
-    info!("Validating VRL script: {}", vrl_script.display());
-
-    let script_content = fs::read_to_string(&vrl_script).await?;
-
-    match OcsfTransformer::validate_script(&script_content) {
-        Ok(_) => {
-            info!("✓ VRL script is valid");
-            Ok(())
-        }
-        Err(e) => {
-            error!("✗ VRL script validation failed: {}", e);
-            std::process::exit(1);
-        }
-    }
-}
-
-async fn convert_command(vector_config: PathBuf, output: Option<PathBuf>) -> Result<()> {
-    info!("Converting Vector config: {}", vector_config.display());
-
-    let content = fs::read_to_string(&vector_config).await?;
-    let vector_cfg = perceptlog::config::VectorConfig::from_toml(&content)?;
-    let transformer_cfg = vector_cfg.to_transformer_config();
-
-    let toml_output = toml::to_string_pretty(&transformer_cfg)?;
-
-    if let Some(output_path) = output {
-        fs::write(&output_path, toml_output).await?;
-        info!("Wrote configuration to {}", output_path.display());
-    } else {
-        println!("{toml_output}");
-    }
-
-    Ok(())
-}
-
-async fn run_command(config_path: PathBuf) -> Result<()> {
-    info!("Loading configuration from: {}", config_path.display());
-
-    let config = TransformerConfig::from_file(&config_path)?;
-    config
-        .validate()
-        .map_err(|e| anyhow::anyhow!("Configuration validation failed: {e}"))?;
-
-    let transformer = OcsfTransformer::with_config(config.clone()).await?;
-
-    // Create output directory
-    fs::create_dir_all(&config.output_path).await?;
-
-    // Process based on input type
-    if config.input_path.is_file() {
-        process_single_file(
-            &transformer,
-            &config.input_path,
-            &config.output_path,
-            config.output_format,
-            config.pretty_print,
-        )
-        .await?;
-    } else if config.input_path.is_dir() {
-        process_directory(
-            &transformer,
-            &config.input_path,
-            &config.output_path,
-            config.output_format,
-            config.pretty_print,
-            config.skip_errors,
-        )
-        .await?;
-    }
-
-    info!("Processing completed");
-    Ok(())
-}
-
-#[cfg(feature = "watch-mode")]
-async fn watch_command(
-    vrl_script: PathBuf,
-    input: PathBuf,
-    output: PathBuf,
-    interval: u64,
-) -> Result<()> {
-    use perceptlog::watcher::FileWatcher;
-
-    info!("Starting watch mode");
-    info!("Watching: {}", input.display());
-    info!("Interval: {} seconds", interval);
-
-    let transformer = OcsfTransformer::new(&vrl_script).await?;
-    let watcher = FileWatcher::new(transformer, input, output, interval)?;
-
-    watcher.start().await?;
-
-    Ok(())
-}
-
-#[cfg(feature = "metrics-support")]
-async fn metrics_command(port: u16) -> Result<()> {
-    use perceptlog::metrics::start_metrics_server;
-
-    info!("Starting metrics server on port {}", port);
-    start_metrics_server(port)
-        .await
-        .map_err(|e| anyhow::anyhow!("Metrics server error: {e}"))?;
 
     Ok(())
 }
