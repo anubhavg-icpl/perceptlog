@@ -188,6 +188,6 @@ fn test_name(path: &Path) -> String {
         .rsplit_once('/')
         .unwrap()
         .1
-        .trim_end_matches(".vrl")
+        .trim_end_matches(".perceptlog")
         .replace('_', " ")
 }

@@ -53,7 +53,7 @@ pub fn test_prefix() -> String {
 }
 
 pub fn example_vrl_path() -> PathBuf {
-    test_dir().join("tests").join("example.vrl")
+    test_dir().join("tests").join("example.perceptlog")
 }
 
 pub fn get_tests_from_functions(functions: Vec<Box<dyn Function>>) -> Vec<Test> {

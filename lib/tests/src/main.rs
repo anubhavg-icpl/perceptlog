@@ -89,7 +89,7 @@ fn main() {
 }
 
 fn test_glob_pattern() -> String {
-    test_dir().join("**/*.vrl").to_str().unwrap().to_string()
+    test_dir().join("**/*.perceptlog").to_str().unwrap().to_string()
 }
 
 fn get_tests(cmd: &Cmd) -> Vec<Test> {
