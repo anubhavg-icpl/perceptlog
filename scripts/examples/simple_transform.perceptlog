@@ -1,0 +1,39 @@
+# Simple OCSF Authentication Event Transformation
+# Extracts basic fields and creates OCSF v1.6.0 structure
+
+# Set OCSF base fields
+.category_uid = 3
+.category_name = "Identity & Access Management"
+.class_uid = 3002
+.class_name = "Authentication"
+
+# Set activity (Logon = 1)
+.activity_id = 1
+.activity_name = "Logon"
+
+# Set severity (Informational = 1)
+.severity_id = 1
+.severity = "Informational"
+
+# Set status (Success = 1)
+.status_id = 1
+.status = "Success"
+
+# Set type_uid (combination of class and activity)
+.type_uid = 300201
+.type_name = "Authentication: Logon"
+
+# Set timestamp to current time
+.time = to_unix_timestamp(now())
+
+# Add metadata
+.metadata = {
+  "version": "1.6.0",
+  "product": {
+    "vendor_name": "PerceptLog",
+    "name": "Example Transform"
+  }
+}
+
+# Return the event
+.
