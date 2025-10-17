@@ -17,6 +17,7 @@ pub struct FileWatcher {
     transformer: Arc<OcsfTransformer>,
     input_path: PathBuf,
     output_path: PathBuf,
+    #[allow(dead_code)] // Will be used for polling-based watching in future implementation
     poll_interval: u64,
 }
 

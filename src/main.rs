@@ -2,7 +2,7 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use perceptlog::{OcsfTransformer, TransformerConfig, config::OutputFormat};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use tokio::fs;
 use tracing::{error, info};
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
@@ -119,7 +119,7 @@ async fn main() -> Result<()> {
     setup_logging(&cli.log_level)?;
 
     // Load configuration if provided
-    let config = if let Some(config_path) = &cli.config {
+    let _config = if let Some(config_path) = &cli.config {
         Some(TransformerConfig::from_file(config_path)?)
     } else {
         None
@@ -190,7 +190,7 @@ async fn transform_command(
     format: OutputFormat,
     pretty: bool,
     skip_errors: bool,
-    batch_size: usize,
+    _batch_size: usize,
 ) -> Result<()> {
     info!("Starting transformation process");
     info!("VRL Script: {}", vrl_script.display());
@@ -253,7 +253,7 @@ async fn process_directory(
     info!("Processing directory: {}", input_dir.display());
 
     let mut entries = fs::read_dir(input_dir).await?;
-    let total_events = 0;
+    let _total_events = 0;
     let mut processed_files = 0;
     let mut failed_files = 0;
 

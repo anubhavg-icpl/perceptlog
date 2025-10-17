@@ -170,7 +170,9 @@ pub struct OcsfObservable {
 
 /// VRL runtime wrapper for executing transformations
 pub struct VrlRuntime {
+    #[allow(dead_code)] // Will be used when VRL execution is properly implemented
     program: Program,
+    #[allow(dead_code)] // Will be used when VRL execution is properly implemented
     timezone: TimeZone,
 }
 
