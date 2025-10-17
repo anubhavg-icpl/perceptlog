@@ -222,8 +222,8 @@ async fn transform_command(
 
 async fn process_single_file(
     transformer: &OcsfTransformer,
-    input: &PathBuf,
-    output_dir: &PathBuf,
+    input: &Path,
+    output_dir: &Path,
     format: OutputFormat,
     pretty: bool,
 ) -> Result<()> {
@@ -244,8 +244,8 @@ async fn process_single_file(
 
 async fn process_directory(
     transformer: &OcsfTransformer,
-    input_dir: &PathBuf,
-    output_dir: &PathBuf,
+    input_dir: &Path,
+    output_dir: &Path,
     format: OutputFormat,
     pretty: bool,
     skip_errors: bool,
@@ -285,7 +285,7 @@ async fn process_directory(
 
 async fn write_events(
     events: &[perceptlog::OcsfEvent],
-    output_file: &PathBuf,
+    output_file: &Path,
     format: OutputFormat,
     pretty: bool,
 ) -> Result<()> {
