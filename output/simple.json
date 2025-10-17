@@ -1,0 +1,122 @@
+[
+  {
+    "metadata": {
+      "version": "1.6.0",
+      "product": {
+        "vendor_name": "PerceptLog",
+        "name": "Example Transform",
+        "version": "1.0.0"
+      }
+    },
+    "category_uid": 3,
+    "category_name": "Identity & Access Management",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "time": 1760720077,
+    "type_uid": 300201,
+    "type_name": "Authentication: Logon",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "status": "Success",
+    "status_id": 1,
+    "severity": "Informational",
+    "severity_id": 1,
+    "message": "Feb 20 10:41:42 test-host sshd[3087]: Accepted password for testuser from 192.168.1.100 port 22222 ssh2"
+  },
+  {
+    "metadata": {
+      "version": "1.6.0",
+      "product": {
+        "vendor_name": "PerceptLog",
+        "name": "Example Transform",
+        "version": "1.0.0"
+      }
+    },
+    "category_uid": 3,
+    "category_name": "Identity & Access Management",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "time": 1760720077,
+    "type_uid": 300201,
+    "type_name": "Authentication: Logon",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "status": "Success",
+    "status_id": 1,
+    "severity": "Informational",
+    "severity_id": 1,
+    "message": "Feb 20 10:48:27 test-host sshd[15112]: Failed password for invalid user hacker from 192.168.1.200 port 33333 ssh2"
+  },
+  {
+    "metadata": {
+      "version": "1.6.0",
+      "product": {
+        "vendor_name": "PerceptLog",
+        "name": "Example Transform",
+        "version": "1.0.0"
+      }
+    },
+    "category_uid": 3,
+    "category_name": "Identity & Access Management",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "time": 1760720077,
+    "type_uid": 300201,
+    "type_name": "Authentication: Logon",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "status": "Success",
+    "status_id": 1,
+    "severity": "Informational",
+    "severity_id": 1,
+    "message": "Feb 20 10:42:00 test-host sudo: testuser : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/ls -la"
+  },
+  {
+    "metadata": {
+      "version": "1.6.0",
+      "product": {
+        "vendor_name": "PerceptLog",
+        "name": "Example Transform",
+        "version": "1.0.0"
+      }
+    },
+    "category_uid": 3,
+    "category_name": "Identity & Access Management",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "time": 1760720077,
+    "type_uid": 300201,
+    "type_name": "Authentication: Logon",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "status": "Success",
+    "status_id": 1,
+    "severity": "Informational",
+    "severity_id": 1,
+    "message": "Feb 20 10:41:47 test-host sshd[3087]: pam_unix(sshd:session): session opened for user testuser(uid=1000) by (uid=0)"
+  },
+  {
+    "metadata": {
+      "version": "1.6.0",
+      "product": {
+        "vendor_name": "PerceptLog",
+        "name": "Example Transform",
+        "version": "1.0.0"
+      }
+    },
+    "category_uid": 3,
+    "category_name": "Identity & Access Management",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "time": 1760720077,
+    "type_uid": 300201,
+    "type_name": "Authentication: Logon",
+    "activity_id": 1,
+    "activity_name": "Logon",
+    "status": "Success",
+    "status_id": 1,
+    "severity": "Informational",
+    "severity_id": 1,
+    "message": "Feb 20 10:41:50 test-host sshd[3087]: pam_unix(sshd:session): session closed for user testuser"
+  }
+]

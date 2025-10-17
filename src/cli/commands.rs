@@ -38,8 +38,12 @@ impl TransformCommand {
         // Create transformer
         let transformer = OcsfTransformer::new(&script).await?;
 
-        // Create output directory
-        FileWriter::ensure_directory_exists(&output).await?;
+        // Ensure output directory exists (parent of output file, or the output dir itself)
+        if output.is_dir() {
+            FileWriter::ensure_directory_exists(&output).await?;
+        } else if let Some(parent) = output.parent() {
+            FileWriter::ensure_directory_exists(parent).await?;
+        }
 
         // Process based on input type
         if input.is_file() {
@@ -61,7 +65,7 @@ impl TransformCommand {
     async fn process_single_file(
         transformer: &OcsfTransformer,
         input: &Path,
-        output_dir: &Path,
+        output: &Path,
         format: OutputFormat,
         pretty: bool,
     ) -> Result<()> {
@@ -75,17 +79,27 @@ impl TransformCommand {
         let successful_events: Vec<_> = results.into_iter().filter_map(|r| r.ok()).collect();
 
         if !successful_events.is_empty() {
-            let output_filename = OutputFormatter::create_output_filename(
-                input
-                    .file_stem()
-                    .and_then(|s| s.to_str())
-                    .unwrap_or("output"),
-                format,
-                false,
-            );
-            let output_file = output_dir.join(output_filename);
+            // Determine output file path
+            let output_file = if output.is_dir() {
+                // Output is a directory, create filename
+                let output_filename = OutputFormatter::create_output_filename(
+                    input
+                        .file_stem()
+                        .and_then(|s| s.to_str())
+                        .unwrap_or("output"),
+                    format,
+                    false,
+                );
+                output.join(output_filename)
+            } else {
+                // Output is a file path, use as-is
+                output.to_path_buf()
+            };
+            
             Self::write_events(&successful_events, &output_file, format, pretty).await?;
             info!("Processed {} events from file", successful_events.len());
+        } else {
+            warn!("No events were successfully transformed");
         }
 
         Ok(())

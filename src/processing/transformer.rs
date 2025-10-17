@@ -86,10 +86,16 @@ impl OcsfTransformer {
 
         // Convert VRL result to JSON
         let json_result = vrl_value_to_serde_json(result);
+        
+        // Debug: log the transformation result
+        debug!("VRL transformation result: {}", serde_json::to_string(&json_result).unwrap_or_else(|_| "failed to serialize".to_string()));
 
         // Parse into OCSF event
-        let ocsf_event: OcsfEvent = serde_json::from_value(json_result)
-            .map_err(|e| TransformError::ParseError(e.to_string()))?;
+        let ocsf_event: OcsfEvent = serde_json::from_value(json_result.clone())
+            .map_err(|e| {
+                warn!("Failed to parse OCSF event: {} - Result was: {:?}", e, json_result);
+                TransformError::ParseError(format!("Failed to parse OCSF event: {}", e))
+            })?;
 
         #[cfg(feature = "metrics-support")]
         {

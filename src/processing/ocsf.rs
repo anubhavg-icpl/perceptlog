@@ -63,15 +63,22 @@ pub struct OcsfEvent {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OcsfMetadata {
-    pub uid: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub uid: Option<String>,
     pub version: String,
     pub product: OcsfProduct,
-    pub logged_time: i64,
-    pub log_name: String,
-    pub log_provider: String,
-    pub event_code: String,
-    pub profiles: Vec<String>,
-    pub log_version: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub logged_time: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub log_name: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub log_provider: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub event_code: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub profiles: Option<Vec<String>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub log_version: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub log_level: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -140,19 +147,19 @@ impl OcsfEventBuilder {
         Self {
             event: OcsfEvent {
                 metadata: OcsfMetadata {
-                    uid: String::new(),
+                    uid: None,
                     version: "1.6.0".to_string(),
                     product: OcsfProduct {
                         vendor_name: "Linux".to_string(),
                         name: "Authentication Logs".to_string(),
                         version: "system".to_string(),
                     },
-                    logged_time: 0,
-                    log_name: String::new(),
-                    log_provider: String::new(),
-                    event_code: String::new(),
-                    profiles: vec!["host".to_string()],
-                    log_version: "1.0".to_string(),
+                    logged_time: None,
+                    log_name: None,
+                    log_provider: None,
+                    event_code: None,
+                    profiles: Some(vec!["host".to_string()]),
+                    log_version: None,
                     log_level: None,
                     original_time: None,
                 },

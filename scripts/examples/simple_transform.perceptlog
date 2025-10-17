@@ -31,7 +31,8 @@
   "version": "1.6.0",
   "product": {
     "vendor_name": "PerceptLog",
-    "name": "Example Transform"
+    "name": "Example Transform",
+    "version": "1.0.0"
   }
 }
 
