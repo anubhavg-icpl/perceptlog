@@ -107,8 +107,8 @@
   1 │ parse_cef!(.message)
     │ ^^^^^^^^^^^^^^^^^^^^ Could not parse whole line successfully
     │
-    = see language documentation at https://vrl.dev
-    = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+    = see language documentation at https://infopercept.com
+    = try your code in the VRL REPL, learn more at https://infopercept.com/examples
   ```
 
   New Behavior: parses data correctly
@@ -138,7 +138,7 @@
 - The `parse_syslog` function now treats RFC 3164 structured data items with no parameters (e.g., `[exampleSDID@32473]`) as part of the main
   message, rather than parsing them as structured data. Items with parameters (e.g., `[exampleSDID@32473 field="value"]`) continue to be
   parsed as structured data. (https://github.com/vectordotdev/vrl/pull/1435)
-- `encode_lz4`  no longer prepends the uncompressed size by default, improving compatibility with standard LZ4 tools. A new `prepend_size` flag restores the old behavior if needed. Also, `decode_lz4` now also accepts `prepend_size` and a `buf_size` option (default: 1MB). 
+- `encode_lz4`  no longer prepends the uncompressed size by default, improving compatibility with standard LZ4 tools. A new `prepend_size` flag restores the old behavior if needed. Also, `decode_lz4` now also accepts `prepend_size` and a `buf_size` option (default: 1MB).
 
   Existing users of `encode_lz4` and `decode_lz4` will need to update their functions to include the argument `prepend_size: true` to maintain existing compatibility.
 
@@ -201,8 +201,8 @@
   1 │ ip_cidr_contains!("INVALID", "192.168.10.32")
     │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unable to parse CIDR: couldn't parse address in network: invalid IP address syntax
     │
-    = see language documentation at https://vrl.dev
-    = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+    = see language documentation at https://infopercept.com
+    = try your code in the VRL REPL, learn more at https://infopercept.com/examples
   ```
 
   New Behavior: Compilation Error
@@ -218,9 +218,9 @@
     │ error: "cidr" must be valid cidr
     │ received: "INVALID"
     │
-    = learn more about error code 403 at https://errors.vrl.dev/403
-    = see language documentation at https://vrl.dev
-    = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+    = learn more about error code 403 at https://errors.infopercept.com/403
+    = see language documentation at https://infopercept.com
+    = try your code in the VRL REPL, learn more at https://infopercept.com/examples
   ```
 
   This change improves error detection by identifying invalid CIDR values earlier, reducing unexpected failures at runtime and provides better performance.

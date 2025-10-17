@@ -10,10 +10,10 @@
 #   │    instead it resolves to string
 #   │
 #   = hint: coerce the value to the required type using a coercion function
-#   = see documentation about if expressions at https://vrl.dev/expressions/#if
-#   = learn more about error code 102 at https://errors.vrl.dev/102
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about if expressions at https://infopercept.com/expressions/#if
+#   = learn more about error code 102 at https://errors.infopercept.com/102
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 if "nope" {
     true

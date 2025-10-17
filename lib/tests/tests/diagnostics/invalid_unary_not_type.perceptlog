@@ -9,8 +9,8 @@
 #   │  negation only works on boolean values
 #   │
 #   = hint: coerce the value to the required type using a coercion function
-#   = see documentation about type coercion at https://functions.vrl.dev/#coerce-functions
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about type coercion at https://functions.infopercept.com/#coerce-functions
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 !!"true"

@@ -9,7 +9,7 @@
 #   │ this identifier name is reserved for future use in the language
 #   │ use a different name instead
 #   │
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 array = []

@@ -9,9 +9,9 @@
 #   │       undefined function
 #   │       did you mean "to_string"?
 #   │
-#   = learn more about error code 105 at https://errors.vrl.dev/105
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 105 at https://errors.infopercept.com/105
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E105]: call to undefined function
 #   ┌─ :5:12
@@ -22,9 +22,9 @@
 #   │            undefined function
 #   │            did you mean "to_string"?
 #   │
-#   = learn more about error code 105 at https://errors.vrl.dev/105
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 105 at https://errors.infopercept.com/105
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E105]: call to undefined function
 #   ┌─ :9:8
@@ -35,9 +35,9 @@
 #   │        undefined function
 #   │        did you mean "to_string"?
 #   │
-#   = learn more about error code 105 at https://errors.vrl.dev/105
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 105 at https://errors.infopercept.com/105
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 foo = to_strng(15)
 upcase(foo)

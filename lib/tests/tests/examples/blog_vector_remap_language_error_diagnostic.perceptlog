@@ -19,11 +19,11 @@
 #   │ or change this to an infallible assignment:
 #   │ ., err = parse_common_log(.log)
 #   │
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = see functions characteristics documentation at https://vrl.dev/expressions/#function-call-characteristics
-#   = learn more about error code 103 at https://errors.vrl.dev/103
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = see functions characteristics documentation at https://infopercept.com/expressions/#function-call-characteristics
+#   = learn more about error code 103 at https://errors.infopercept.com/103
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 . = parse_common_log(.log)
 .total_bytes = del(.size)

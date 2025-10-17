@@ -6,8 +6,8 @@
 # 2 │ to_string()
 #   │ ^^^^^^^^^^^ required argument missing: "value" (position 0)
 #   │
-#   = learn more about error code 107 at https://errors.vrl.dev/107
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 107 at https://errors.infopercept.com/107
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 to_string()

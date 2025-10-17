@@ -9,8 +9,8 @@
 #   │ undefined function
 #   │ did you mean "parse_duration"?
 #   │
-#   = learn more about error code 105 at https://errors.vrl.dev/105
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 105 at https://errors.infopercept.com/105
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 unknown_function(.foo, .bar)

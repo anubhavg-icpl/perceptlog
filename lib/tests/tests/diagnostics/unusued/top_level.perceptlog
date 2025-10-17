@@ -8,8 +8,8 @@
 #   │ ^^^^^ help: use the result of this expression or remove it
 #   │
 #   = this expression has no side-effects
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 # warning[E900]: unused variable `x`
 #  ┌─ :4:1
 #  │
@@ -17,8 +17,8 @@
 #  │ ^ help: use the result of this expression or remove it
 #  │
 #  = this expression has no side-effects
-#  = see language documentation at https://vrl.dev
-#  = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#  = see language documentation at https://infopercept.com
+#  = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 "foo"
 

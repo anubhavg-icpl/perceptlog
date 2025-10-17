@@ -6,7 +6,7 @@
 # 2 │ . = 5
 #   │ ^^^ mutation of read-only value
 #   │
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 . = 5

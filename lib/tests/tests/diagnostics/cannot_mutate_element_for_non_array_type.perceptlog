@@ -13,9 +13,9 @@
 #   =     foo = []
 #   =     foo[0] = []
 #   =
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E642]: parent path segment rejects this mutation
 #    ┌─ :11:7
@@ -30,9 +30,9 @@
 #    =     foo[0] = []
 #    =     foo[0][1] = "baz"
 #    =
-#    = see documentation about error handling at https://errors.vrl.dev/#handling
-#    = see language documentation at https://vrl.dev
-#    = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#    = see documentation about error handling at https://errors.infopercept.com/#handling
+#    = see language documentation at https://infopercept.com
+#    = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 foo = "foo"
 foo[0] = []

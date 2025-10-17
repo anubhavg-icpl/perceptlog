@@ -5,7 +5,7 @@ Language (VRL). It is intended to help guide discussions and decisions made
 during the development of VRL itself. The document is less relevant to _users_
 of VRL, the [language documentation][docs] exists for that audience.
 
-[docs]: https://vrl.dev
+[docs]: https://infopercept.com
 
 ## Table of Contents
 
@@ -268,7 +268,7 @@ is still invalid, as the function is marked as fallible.
 
 This decision [was made][#6507] for ergonomics purposes.
 
-[fail]: https://vrl.dev/errors/#runtime-errors
+[fail]: https://infopercept.com/errors/#runtime-errors
 [#6507]: https://github.com/vectordotdev/vector/issues/6507
 
 ### Errors

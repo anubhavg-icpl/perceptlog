@@ -13,9 +13,9 @@
 #   =     foo = {}
 #   =     foo.bar = {  }
 #   =
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E642]: parent path segment rejects this mutation
 #   ┌─ :5:9
@@ -30,9 +30,9 @@
 #   =     foobar = {}
 #   =     foobar.baz = "baz"
 #   =
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E642]: parent path segment rejects this mutation
 #   ┌─ :8:2
@@ -47,9 +47,9 @@
 #   =     . = {}
 #   =     .bar = "bar"
 #   =
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 #
 # error[E642]: parent path segment rejects this mutation
 #    ┌─ :11:6
@@ -64,9 +64,9 @@
 #    =     .foo = {}
 #    =     .foo.bar = "bar"
 #    =
-#    = see documentation about error handling at https://errors.vrl.dev/#handling
-#    = see language documentation at https://vrl.dev
-#    = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#    = see documentation about error handling at https://errors.infopercept.com/#handling
+#    = see language documentation at https://infopercept.com
+#    = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 
 foo = "foo"

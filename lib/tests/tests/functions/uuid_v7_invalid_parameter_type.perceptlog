@@ -18,9 +18,9 @@
 # =     123 = to_unix_timestamp(123) ?? now()
 # =     uuid_v7(123)
 # =
-# = see documentation about error handling at https://errors.vrl.dev/#handling
-# = learn more about error code 110 at https://errors.vrl.dev/110
-# = see language documentation at https://vrl.dev
-# = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+# = see documentation about error handling at https://errors.infopercept.com/#handling
+# = learn more about error code 110 at https://errors.infopercept.com/110
+# = see language documentation at https://infopercept.com
+# = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 uuid_v7(123)

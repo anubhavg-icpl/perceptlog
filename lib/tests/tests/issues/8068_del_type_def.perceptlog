@@ -9,10 +9,10 @@
 #   │ expression can result in runtime error
 #   │ handle the error case to ensure runtime success
 #   │
-#   = see documentation about error handling at https://errors.vrl.dev/#handling
-#   = learn more about error code 100 at https://errors.vrl.dev/100
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = see documentation about error handling at https://errors.infopercept.com/#handling
+#   = learn more about error code 100 at https://errors.infopercept.com/100
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 .onk = ["nork", "spork"]
 del(.onk[0])

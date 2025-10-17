@@ -10,8 +10,8 @@
 #   │ error: unknown filter name
 #   │ received: { "type": "bad" }
 #   │
-#   = learn more about error code 403 at https://errors.vrl.dev/403
-#   = see language documentation at https://vrl.dev
-#   = try your code in the VRL REPL, learn more at https://vrl.dev/examples
+#   = learn more about error code 403 at https://errors.infopercept.com/403
+#   = see language documentation at https://infopercept.com
+#   = try your code in the VRL REPL, learn more at https://infopercept.com/examples
 
 redact("hello 4916155524184782 world", [{ "type": "bad" }])
