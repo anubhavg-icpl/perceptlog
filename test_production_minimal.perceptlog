@@ -1,0 +1,23 @@
+# Minimal test to see if production script runs at all
+# Just set basic OCSF fields and return
+
+.category_uid = 3
+.class_uid = 3002  
+.time = to_unix_timestamp(now())
+.activity_id = 1
+.status_id = 1
+.severity_id = 1
+
+.metadata = {
+  "version": "1.6.0",
+  "product": {
+    "vendor_name": "PerceptLog",
+    "name": "Test",
+    "version": "1.0.0"
+  }
+}
+
+# Keep original message
+.message = .message
+
+.

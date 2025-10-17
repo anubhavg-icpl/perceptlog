@@ -216,14 +216,14 @@ impl OcsfEventBuilder {
     /// Set the category information
     pub fn with_category(mut self, uid: i32, name: impl Into<String>) -> Self {
         self.event.category_uid = uid;
-        self.event.category_name = Some(name.into());
+        self.event.category_name = name.into();
         self
     }
 
     /// Set the class information
     pub fn with_class(mut self, uid: i32, name: impl Into<String>) -> Self {
         self.event.class_uid = uid;
-        self.event.class_name = Some(name.into());
+        self.event.class_name = name.into();
         self
     }
 
@@ -235,28 +235,28 @@ impl OcsfEventBuilder {
 
     /// Set the type information
     pub fn with_type(mut self, uid: i32, name: impl Into<String>) -> Self {
-        self.event.type_uid = Some(uid);
-        self.event.type_name = Some(name.into());
+        self.event.type_uid = uid;
+        self.event.type_name = name.into();
         self
     }
 
     /// Set the activity information
     pub fn with_activity(mut self, id: i32, name: impl Into<String>) -> Self {
         self.event.activity_id = id;
-        self.event.activity_name = Some(name.into());
+        self.event.activity_name = name.into();
         self
     }
 
     /// Set the status information
     pub fn with_status(mut self, status: impl Into<String>, status_id: i32) -> Self {
-        self.event.status = Some(status.into());
+        self.event.status = status.into();
         self.event.status_id = status_id;
         self
     }
 
     /// Set the severity information
     pub fn with_severity(mut self, severity: impl Into<String>, severity_id: i32) -> Self {
-        self.event.severity = Some(severity.into());
+        self.event.severity = severity.into();
         self.event.severity_id = severity_id;
         self
     }
