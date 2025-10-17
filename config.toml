@@ -1,0 +1,45 @@
+# Example configuration for VRL OCSF Transformer
+# This configuration matches your existing Vector setup
+
+# Path to your VRL script (the one you provided)
+vrl_script_path = "remap.vrl"
+
+# Input path - change this to match your RHEL secure log location
+# For Ubuntu/Debian: /var/log/auth.log
+# For RHEL/CentOS: /var/log/secure
+input_path = "rhel/secure"
+
+# Output directory for OCSF formatted events
+output_path = "./ocsf_output_rhel"
+
+# Output format matching your Vector config (ndjson for streaming)
+output_format = "ndjson"
+
+# Processing settings
+batch_size = 100
+skip_errors = true
+max_workers = 4
+
+# Logging
+log_level = "info"
+pretty_print = false
+
+# Optional: Enable watch mode for continuous monitoring
+watch_mode = false
+watch_interval = 5
+
+# Optional: Enable metrics for monitoring
+enable_metrics = false
+metrics_port = 9090
+
+# Optional: Enable hot reload of VRL script
+hot_reload = false
+
+# File patterns (optional)
+# Include specific log files
+include_patterns = ["secure*", "*.log"]
+# Exclude compressed or old files
+exclude_patterns = ["*.gz", "*.old", "*.1", "*.2"]
+
+# Optional: Directory for custom VRL functions
+# vrl_functions_dir = "./vrl_functions"
